@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "1004659550619",
+    "project_id": "teamramen-c8713",
+    "storage_bucket": "teamramen-c8713.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1004659550619:android:1781eb0f2a3776029fd93e",
+        "android_client_info": {
+          "package_name": "com.example.aberdeenceramicsapp"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC-HxPor6F51k5Vx_omQDJrlvlAP73fh3k"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
