@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">AberdeenCeramicsApp</string>
+
+    <!--NavBar Strings-->
+    <string name="profile_nb">profile</string>
+    <string name="clock_nb">clock in</string>
+    <string name="safety_nb">safety</string>
+    <string name="classes_nb">classes</string>
 </resources>
