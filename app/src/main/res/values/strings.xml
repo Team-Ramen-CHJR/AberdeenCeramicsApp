@@ -6,4 +6,6 @@
     <string name="clock_nb">clock in</string>
     <string name="safety_nb">safety</string>
     <string name="classes_nb">classes</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
