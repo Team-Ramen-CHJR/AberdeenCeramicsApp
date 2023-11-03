@@ -10,14 +10,14 @@
 
         android:title="@string/clock_nb"
         android:id="@+id/clock_nb"
-        android:icon="@drawable/baseline_person_24"/>
+        android:icon="@drawable/baseline_access_time_24"/>
     <item
 
         android:title="@string/safety_nb"
         android:id="@+id/safety_nb"
-        android:icon="@drawable/baseline_person_24"/>
+        android:icon="@drawable/baseline_health_and_safety_24"/>
     <item
         android:title="@string/classes_nb"
         android:id="@+id/classes_nb"
-        android:icon="@drawable/baseline_person_24"/>
+        android:icon="@drawable/baseline_menu_book_24"/>
 </menu>
