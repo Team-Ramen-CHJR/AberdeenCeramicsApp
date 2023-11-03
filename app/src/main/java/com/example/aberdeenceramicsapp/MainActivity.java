@@ -11,27 +11,60 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        /*
 
-        URL url = new URL("https://teamramen-c8713.eu3.firebasedatabase.app/") // this should be the url but I might be wrong. it will need to be passed when using getInstance
-        FirebaseDatabase database = FirebaseDatabase.getInstance();
-DatabaseReference myRef = database.getReference("message");
-        // Read from the database
-myRef.addValueEventListener(new ValueEventListener() {
-    @Override
-    public void onDataChange(DataSnapshot dataSnapshot) {
-        // This method is called once with the initial value and again
-        // whenever data at this location is updated.
-        String value = dataSnapshot.getValue(String.class);
-        Log.d(TAG, "Value is: " + value);
     }
+    /*
+    public void databaseStuff(){
 
-    @Override
-    public void onCancelled(DatabaseError error) {
-        // Failed to read value
-        Log.w(TAG, "Failed to read value.", error.toException());
-    }
-});
+        some random example code from tools>firbase> cloud firestore
+        URL url = new URL("https://teamramen-c8713-default-rtdb.europe-west1.firebasedatabase.app//") // this should be the url but I might be wrong. it will need to be passed when using getInstance
+        FirebaseFirestore db = FirebaseFirestore.getInstance();
+        // Create a new user with a first and last name
+Map<String, Object> user = new HashMap<>();
+user.put("first", "Ada");
+user.put("last", "Lovelace");
+user.put("born", 1815);
+
+// Add a new document with a generated ID
+db.collection("users")
+        .add(user)
+        .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
+            @Override
+            public void onSuccess(DocumentReference documentReference) {
+                Log.d(TAG, "DocumentSnapshot added with ID: " + documentReference.getId());
+            }
+        })
+        .addOnFailureListener(new OnFailureListener() {
+            @Override
+            public void onFailure(@NonNull Exception e) {
+                Log.w(TAG, "Error adding document", e);
+            }
+        });
+
+        // Create a new user with a first, middle, and last name
+Map<String, Object> user = new HashMap<>();
+user.put("first", "Alan");
+user.put("middle", "Mathison");
+user.put("last", "Turing");
+user.put("born", 1912);
+
+// Add a new document with a generated ID
+db.collection("users")
+        .add(user)
+        .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
+            @Override
+            public void onSuccess(DocumentReference documentReference) {
+                Log.d(TAG, "DocumentSnapshot added with ID: " + documentReference.getId());
+            }
+        })
+        .addOnFailureListener(new OnFailureListener() {
+            @Override
+            public void onFailure(@NonNull Exception e) {
+                Log.w(TAG, "Error adding document", e);
+            }
+        });
+
+}
+
          */
-    }
 }
