@@ -12,6 +12,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         /*
+
         URL url = new URL("https://teamramen-c8713.eu3.firebasedatabase.app/") // this should be the url but I might be wrong. it will need to be passed when using getInstance
         FirebaseDatabase database = FirebaseDatabase.getInstance();
 DatabaseReference myRef = database.getReference("message");
