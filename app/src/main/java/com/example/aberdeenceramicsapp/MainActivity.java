@@ -16,10 +16,12 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        startTimer();
+        // this call should be moved to sign in once that is implemented
+        Instant start = startTimer();
+
     }
 
-    public void startTimer(){
+    public Instant startTimer(){
         TextView clock = (TextView)findViewById(R.id.userTimer);
         Instant start = Instant.now();
         Thread timer;
@@ -44,7 +46,7 @@ public class MainActivity extends AppCompatActivity {
         };
         timer.setDaemon(true);
         timer.start();
-
+        return start;
     }
 
     }
