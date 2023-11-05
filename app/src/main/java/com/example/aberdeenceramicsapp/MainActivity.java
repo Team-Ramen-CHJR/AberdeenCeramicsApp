@@ -2,7 +2,12 @@ package com.example.aberdeenceramicsapp;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import java.time.Duration;
+import java.time.Instant;
+import java.util.Timer;
+
 import android.os.Bundle;
+import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -11,6 +16,36 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        startTimer();
+    }
+
+    public void startTimer(){
+        TextView clock = (TextView)findViewById(R.id.userTimer);
+        Instant start = Instant.now();
+        Thread timer;
+        timer = new Thread(){
+            @Override public void run(){
+                for (;;) {
+                    try { Thread.sleep(1000L);
+                    } catch (InterruptedException ex) {/* ignore */ }
+
+                    long seconds = Duration.between(start, Instant.now()).getSeconds();
+                    long absSeconds = Math.abs(seconds);
+                    String formattedTime = String.format("%d:%02d:%02d", absSeconds / 3600, (absSeconds % 3600) / 60, absSeconds % 60); // https://stackoverflow.com/a/266846 accessed 05/11/2023
+
+                    runOnUiThread(new Runnable() {
+                        @Override
+                        public void run() {
+                            clock.setText(formattedTime);
+                        }
+                    });
+
+                }}
+        };
+        timer.setDaemon(true);
+        timer.start();
+
+    }
 
     }
     /*
@@ -67,4 +102,3 @@ db.collection("users")
 }
 
          */
-}
