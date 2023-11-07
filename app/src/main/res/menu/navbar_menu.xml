@@ -3,21 +3,21 @@
 
     <item
 
-        android:id="@+id/profile_nb"
+        android:id="@+id/action_newsletter_fragment_to_profile_fragment"
         android:icon="@drawable/baseline_person_24"
         android:title="@string/profile_nb" />
     <item
 
         android:title="@string/clock_nb"
-        android:id="@+id/clock_nb"
+        android:id="@+id/action_newsletter_fragment_to_clockIn_fragment"
         android:icon="@drawable/baseline_person_24"/>
     <item
 
         android:title="@string/safety_nb"
-        android:id="@+id/safety_nb"
+        android:id="@+id/action_newsletter_fragment_to_safety_fragment"
         android:icon="@drawable/baseline_person_24"/>
     <item
         android:title="@string/classes_nb"
-        android:id="@+id/classes_nb"
+        android:id="@+id/action_newsletter_fragment_to_classes_fragment"
         android:icon="@drawable/baseline_person_24"/>
 </menu>

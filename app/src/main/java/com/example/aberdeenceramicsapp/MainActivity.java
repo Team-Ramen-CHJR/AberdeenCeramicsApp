@@ -1,20 +1,36 @@
 package com.example.aberdeenceramicsapp;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.navigation.NavController;
+import androidx.navigation.fragment.NavHostFragment;
+import androidx.navigation.ui.NavigationUI;
 
 import java.time.Duration;
 import java.time.Instant;
 import java.util.Timer;
 
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.widget.TextView;
 
-public class MainActivity extends AppCompatActivity {
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 
+public class MainActivity extends AppCompatActivity  {
+    BottomNavigationView bottomNavigationView;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+//        bottomNavigationView.setOnNavigationItemSelectedListener(this);
+//        bottomNavigationView.setContentView(R.layout.fragment_newsletter_fragment);
+        NavHostFragment navHostFragment = (NavHostFragment) getSupportFragmentManager().findFragmentById(R.id.nav_host_fragment);
+        NavController navController = navHostFragment.getNavController();
+        BottomNavigationView bottomNav = findViewById(R.id.navbarView);
+        NavigationUI.setupWithNavController(bottomNav, navController);
+
+
 
         // this call should be moved to sign in once that is implemented
         Instant start = startTimer();
@@ -47,9 +63,8 @@ public class MainActivity extends AppCompatActivity {
         timer.setDaemon(true);
         timer.start();
         return start;
-    }
+    }}
 
-    }
     /*
     public void databaseStuff(){
 
