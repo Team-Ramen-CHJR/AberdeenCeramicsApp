@@ -9,21 +9,21 @@
 
     <TextView
         android:id="@+id/SafetyTitle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="362dp"
+        android:layout_height="57dp"
         android:text="@string/SafetyTitle"
         android:textColor="#6E311C"
         android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.049"
+        app:layout_constraintHorizontal_bias="0.326"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.088" />
+        app:layout_constraintVertical_bias="0.086" />
 
     <ScrollView
-        android:layout_width="378dp"
-        android:layout_height="639dp"
+        android:layout_width="380dp"
+        android:layout_height="521dp"
         android:layout_marginTop="136dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.515"
@@ -31,15 +31,233 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <LinearLayout
+            android:id="@+id/linearLayout2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
             <TextView
-                android:id="@+id/SafetyText"
+                android:id="@+id/FireEscapeTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/FireEscapesTitle"
+                tools:layout_conversion_absoluteHeight="19dp"
+                tools:layout_conversion_absoluteWidth="378dp"
+                tools:layout_editor_absoluteX="17dp"
+                tools:layout_editor_absoluteY="136dp" />
+
+            <TextView
+                android:id="@+id/FireText"
+                android:layout_width="match_parent"
+                android:layout_height="107dp"
+                android:text="@string/FireEscapes"
+                tools:layout_conversion_absoluteHeight="134dp"
+                tools:layout_conversion_absoluteWidth="378dp"
+                tools:layout_editor_absoluteX="17dp"
+                tools:layout_editor_absoluteY="155dp" />
+
+            <TextView
+                android:id="@+id/FirstAidTitle"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/HealthAndSafety" />
+                android:text="@string/FirstAidTitle"
+                tools:layout_conversion_absoluteHeight="19dp"
+                tools:layout_conversion_absoluteWidth="378dp"
+                tools:layout_editor_absoluteX="17dp"
+                tools:layout_editor_absoluteY="136dp" />
+
+            <TextView
+                android:id="@+id/FirstAidText"
+                android:layout_width="match_parent"
+                android:layout_height="64dp"
+                android:text="@string/FirstAid"
+                tools:layout_conversion_absoluteHeight="134dp"
+                tools:layout_conversion_absoluteWidth="378dp"
+                tools:layout_editor_absoluteX="17dp"
+                tools:layout_editor_absoluteY="155dp" />
+
+            <TextView
+                android:id="@+id/ElecTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/ElectricalHazardsTitle"
+                tools:layout_conversion_absoluteHeight="19dp"
+                tools:layout_conversion_absoluteWidth="378dp"
+                tools:layout_editor_absoluteX="17dp"
+                tools:layout_editor_absoluteY="136dp" />
+
+            <TextView
+                android:id="@+id/ElecText"
+                android:layout_width="match_parent"
+                android:layout_height="211dp"
+                android:text="@string/ElectricalHazards"
+                tools:layout_conversion_absoluteHeight="134dp"
+                tools:layout_conversion_absoluteWidth="378dp"
+                tools:layout_editor_absoluteX="17dp"
+                tools:layout_editor_absoluteY="155dp" />
+
+            <TextView
+                android:id="@+id/WaterTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/HotWaterTitle"
+                tools:layout_conversion_absoluteHeight="19dp"
+                tools:layout_conversion_absoluteWidth="378dp"
+                tools:layout_editor_absoluteX="17dp"
+                tools:layout_editor_absoluteY="136dp" />
+
+            <TextView
+                android:id="@+id/WaterText"
+                android:layout_width="match_parent"
+                android:layout_height="69dp"
+                android:text="@string/HotWater"
+                tools:layout_conversion_absoluteHeight="134dp"
+                tools:layout_conversion_absoluteWidth="378dp" />
+
+            <TextView
+                android:id="@+id/PotteryTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/WheelsTitle"
+                tools:layout_conversion_absoluteHeight="19dp"
+                tools:layout_conversion_absoluteWidth="378dp"
+                tools:layout_editor_absoluteX="17dp"
+                tools:layout_editor_absoluteY="136dp" />
+
+            <TextView
+                android:id="@+id/PotteryText"
+                android:layout_width="match_parent"
+                android:layout_height="93dp"
+                android:text="@string/Wheels"
+                tools:layout_conversion_absoluteHeight="134dp"
+                tools:layout_conversion_absoluteWidth="378dp" />
+
+            <TextView
+                android:id="@+id/WasteTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/WasteTitle"
+                tools:layout_conversion_absoluteHeight="19dp"
+                tools:layout_conversion_absoluteWidth="378dp"
+                tools:layout_editor_absoluteX="17dp"
+                tools:layout_editor_absoluteY="136dp" />
+
+            <TextView
+                android:id="@+id/WasteText"
+                android:layout_width="match_parent"
+                android:layout_height="65dp"
+                android:text="@string/Waste"
+                tools:layout_conversion_absoluteHeight="134dp"
+                tools:layout_conversion_absoluteWidth="378dp" />
+
+            <TextView
+                android:id="@+id/SlipsTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/SlipsTitle"
+                tools:layout_conversion_absoluteHeight="19dp"
+                tools:layout_conversion_absoluteWidth="378dp"
+                tools:layout_editor_absoluteX="17dp"
+                tools:layout_editor_absoluteY="136dp" />
+
+            <TextView
+                android:id="@+id/SlipsText"
+                android:layout_width="match_parent"
+                android:layout_height="76dp"
+                android:text="@string/Slips"
+                tools:layout_conversion_absoluteHeight="134dp"
+                tools:layout_conversion_absoluteWidth="378dp" />
+
+            <TextView
+                android:id="@+id/CutsTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/CutsTitle"
+                tools:layout_conversion_absoluteHeight="19dp"
+                tools:layout_conversion_absoluteWidth="378dp"
+                tools:layout_editor_absoluteX="17dp"
+                tools:layout_editor_absoluteY="136dp" />
+
+            <TextView
+                android:id="@+id/CutsText"
+                android:layout_width="match_parent"
+                android:layout_height="143dp"
+                android:text="@string/Cuts"
+                tools:layout_conversion_absoluteHeight="134dp"
+                tools:layout_conversion_absoluteWidth="378dp" />
+
+            <TextView
+                android:id="@+id/KilnsTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/KilnsTitle"
+                tools:layout_conversion_absoluteHeight="19dp"
+                tools:layout_conversion_absoluteWidth="378dp"
+                tools:layout_editor_absoluteX="17dp"
+                tools:layout_editor_absoluteY="136dp" />
+
+            <TextView
+                android:id="@+id/KilnsText"
+                android:layout_width="match_parent"
+                android:layout_height="125dp"
+                android:text="@string/Kilns"
+                tools:layout_conversion_absoluteHeight="134dp"
+                tools:layout_conversion_absoluteWidth="378dp" />
+
+            <TextView
+                android:id="@+id/ResTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/ResponsibilitiesTitle"
+                tools:layout_conversion_absoluteHeight="19dp"
+                tools:layout_conversion_absoluteWidth="378dp"
+                tools:layout_editor_absoluteX="17dp"
+                tools:layout_editor_absoluteY="136dp" />
+
+            <TextView
+                android:id="@+id/ResText"
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                android:text="@string/Responsibilties"
+                tools:layout_conversion_absoluteHeight="134dp"
+                tools:layout_conversion_absoluteWidth="378dp" />
+
+            <TextView
+                android:id="@+id/ClayTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/ClayTitle"
+                tools:layout_conversion_absoluteHeight="19dp"
+                tools:layout_conversion_absoluteWidth="378dp"
+                tools:layout_editor_absoluteX="17dp"
+                tools:layout_editor_absoluteY="136dp" />
+
+            <TextView
+                android:id="@+id/ClayText"
+                android:layout_width="match_parent"
+                android:layout_height="1615dp"
+                android:text="@string/Clay"
+                tools:layout_conversion_absoluteHeight="134dp"
+                tools:layout_conversion_absoluteWidth="378dp" />
+
+            <TextView
+                android:id="@+id/KilnRmTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/KilnRoomTitle"
+                tools:layout_conversion_absoluteHeight="19dp"
+                tools:layout_conversion_absoluteWidth="378dp"
+                tools:layout_editor_absoluteX="17dp"
+                tools:layout_editor_absoluteY="136dp" />
+
+            <TextView
+                android:id="@+id/KilnRmText"
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                android:text="@string/KilnRoom"
+                tools:layout_conversion_absoluteHeight="134dp"
+                tools:layout_conversion_absoluteWidth="378dp" />
+
         </LinearLayout>
     </ScrollView>
 

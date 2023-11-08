@@ -94,9 +94,7 @@
         android:textSize="14sp"
         app:layout_constraintBottom_toBottomOf="@+id/NotifBackground"
         app:layout_constraintEnd_toEndOf="@+id/NotifBackground"
-        app:layout_constraintHorizontal_bias="0.664"
         app:layout_constraintStart_toStartOf="@+id/NotifBackground"
-        app:layout_constraintTop_toTopOf="@+id/NotifBackground"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintTop_toTopOf="@+id/NotifBackground" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
