@@ -1,14 +1,102 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/frameLayout5"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".profile_fragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+    <Button
+        android:id="@+id/AccountBtn"
+        style="@style/Widget.AppCompat.Button.Colored"
+        android:layout_width="344dp"
+        android:layout_height="114dp"
+        android:background="#DDCABE"
+        android:backgroundTintMode="add"
+        android:text="@string/Account"
+        android:textColor="#6E311C"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.492"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.251" />
 
-</FrameLayout>
+    <Button
+        android:id="@+id/MemberBtn"
+        style="@style/Widget.AppCompat.Button.Colored"
+        android:layout_width="344dp"
+        android:layout_height="114dp"
+        android:background="#CFD9DA"
+        android:backgroundTintMode="add"
+        android:text="@string/Membership"
+        android:textColor="#6E311C"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.492"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.474" />
+
+    <Button
+        android:id="@+id/LogOutBtn"
+        style="@style/Widget.AppCompat.Button.Colored"
+        android:layout_width="344dp"
+        android:layout_height="203dp"
+        android:background="#D9876B"
+        android:backgroundTintMode="add"
+        android:text="@string/LogOut"
+        android:textColor="#6E311C"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.492"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.812" />
+
+    <ImageView
+        android:id="@+id/NotifBackground"
+        android:layout_width="415dp"
+        android:layout_height="73dp"
+        android:scaleType="fitXY"
+        android:src="@drawable/backgroundbrown"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.051" />
+
+    <ImageView
+        android:id="@+id/NotifAlert"
+        android:layout_width="61dp"
+        android:layout_height="56dp"
+        android:scaleType="fitStart"
+        android:src="@drawable/alert"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.046"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.063" />
+
+    <TextView
+        android:id="@+id/NotifText"
+        android:layout_width="278dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="17dp"
+        android:text="@string/notif"
+        android:textColor="@color/white"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toBottomOf="@+id/NotifBackground"
+        app:layout_constraintEnd_toEndOf="@+id/NotifBackground"
+        app:layout_constraintHorizontal_bias="0.664"
+        app:layout_constraintStart_toStartOf="@+id/NotifBackground"
+        app:layout_constraintTop_toTopOf="@+id/NotifBackground"
+        app:layout_constraintVertical_bias="1.0" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
