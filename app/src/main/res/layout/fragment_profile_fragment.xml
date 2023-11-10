@@ -14,6 +14,7 @@
         android:layout_height="114dp"
         android:background="#DDCABE"
         android:backgroundTintMode="add"
+        android:fontFamily="@font/normalbrandongrot"
         android:text="@string/Account"
         android:textColor="#6E311C"
         android:textSize="24sp"
@@ -31,6 +32,7 @@
         android:layout_height="114dp"
         android:background="#CFD9DA"
         android:backgroundTintMode="add"
+        android:fontFamily="@font/normalbrandongrot"
         android:text="@string/Membership"
         android:textColor="#6E311C"
         android:textSize="24sp"
@@ -48,6 +50,7 @@
         android:layout_height="203dp"
         android:background="#D9876B"
         android:backgroundTintMode="add"
+        android:fontFamily="@font/normalbrandongrot"
         android:text="@string/LogOut"
         android:textColor="#6E311C"
         android:textSize="24sp"
@@ -78,10 +81,10 @@
         android:src="@drawable/alert"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.046"
+        app:layout_constraintHorizontal_bias="0.045"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.063" />
+        app:layout_constraintVertical_bias="0.06" />
 
     <TextView
         android:id="@+id/NotifText"
@@ -89,12 +92,15 @@
         android:layout_height="40dp"
         android:layout_marginTop="16dp"
         android:layout_marginBottom="17dp"
+        android:fontFamily="@font/normalbrandongrot"
         android:text="@string/notif"
         android:textColor="@color/white"
-        android:textSize="14sp"
+        android:textSize="16sp"
         app:layout_constraintBottom_toBottomOf="@+id/NotifBackground"
         app:layout_constraintEnd_toEndOf="@+id/NotifBackground"
+        app:layout_constraintHorizontal_bias="0.569"
         app:layout_constraintStart_toStartOf="@+id/NotifBackground"
-        app:layout_constraintTop_toTopOf="@+id/NotifBackground" />
+        app:layout_constraintTop_toTopOf="@+id/NotifBackground"
+        app:layout_constraintVertical_bias="1.0" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
