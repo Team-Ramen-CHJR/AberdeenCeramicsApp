@@ -11,7 +11,7 @@
         android:id="@+id/Class_Title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:fontFamily="@font/BrixtonOutlineLt"
+        android:fontFamily="@font/brixton_outline_lt"
         android:text="@string/Class_Title"
         android:textColor="#6E311C"
         android:textSize="24sp"
