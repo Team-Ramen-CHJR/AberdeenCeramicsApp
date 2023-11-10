@@ -2,6 +2,8 @@ package com.example.aberdeenceramicsapp;
 
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 import android.view.LayoutInflater;
@@ -62,4 +64,6 @@ public class signIn_fragment extends Fragment {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_sign_in_fragment, container, false);
     }
+
+   //log in data getting code
 }
