@@ -1,14 +1,300 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/frameLayout2"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".classes_fragment">
 
-    <!-- TODO: Update blank fragment layout -->
     <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:id="@+id/Class_Title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/normalbrandongrot"
+        android:text="@string/Class_Title"
+        android:textColor="#6E311C"
+        android:textSize="34sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.094"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.109" />
 
-</FrameLayout>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/scrollView2"
+        android:layout_width="360dp"
+        android:layout_height="595dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.49"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/linearLayout"
+            android:layout_width="330dp"
+            android:layout_height="614dp"
+            android:layout_marginStart="12dp"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.515">
+
+            <ImageView
+                android:id="@+id/Class1_Background"
+                android:layout_width="320dp"
+                android:layout_height="173dp"
+                android:scaleType="fitXY"
+                android:src="@drawable/backgroundblue"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/Class1_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="76dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="151dp"
+                android:layout_marginBottom="137dp"
+                android:fontFamily="@font/normalbrandongrot"
+                android:text="@string/Class1Name"
+                android:textColor="#6E311C"
+                android:textSize="16sp"
+                app:layout_constraintBottom_toBottomOf="@+id/Class1_Background"
+                app:layout_constraintEnd_toEndOf="@+id/Class1_Background"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/Class1_Background"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.0" />
+
+            <TextView
+                android:id="@+id/Class1_Text"
+                android:layout_width="230dp"
+                android:layout_height="56dp"
+                android:layout_marginStart="76dp"
+                android:layout_marginTop="51dp"
+                android:layout_marginEnd="175dp"
+                android:layout_marginBottom="106dp"
+                android:fontFamily="@font/brandongrot"
+                android:text="@string/Class1Text"
+                android:textColor="#6E311C"
+                android:textSize="16sp"
+                app:layout_constraintBottom_toBottomOf="@+id/Class1_Background"
+                app:layout_constraintEnd_toEndOf="@+id/Class1_Background"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/Class1_Background"
+                app:layout_constraintTop_toTopOf="@+id/Class1_Background"
+                app:layout_constraintVertical_bias="0.125" />
+
+            <Button
+                android:id="@+id/Class1_BookBtn"
+                android:layout_width="121dp"
+                android:layout_height="35dp"
+                android:layout_marginStart="180dp"
+                android:layout_marginTop="116dp"
+                android:layout_marginEnd="19dp"
+                android:layout_marginBottom="22dp"
+                android:background="#D9876B"
+                android:backgroundTintMode="add"
+                android:fontFamily="@font/normalbrandongrot"
+                android:text="@string/book"
+                android:textColor="@color/white"
+                android:textSize="12sp"
+                app:layout_constraintBottom_toBottomOf="@+id/Class1_Background"
+                app:layout_constraintEnd_toEndOf="@+id/Class1_Background"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/Class1_Background"
+                app:layout_constraintTop_toTopOf="@+id/Class1_Background" />
+
+            <ImageView
+                android:id="@+id/Class1_Img"
+                android:layout_width="67dp"
+                android:layout_height="173dp"
+                android:layout_marginEnd="253dp"
+                android:scaleType="fitXY"
+                android:src="@drawable/class_1"
+                app:layout_constraintBottom_toBottomOf="@+id/Class1_Background"
+                app:layout_constraintEnd_toEndOf="@+id/Class1_Background"
+                app:layout_constraintStart_toStartOf="@+id/Class1_Background"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/Class2_Background"
+                android:layout_width="320dp"
+                android:layout_height="173dp"
+                android:scaleType="fitXY"
+                android:src="@drawable/backgroundblue"
+                app:layout_constraintBottom_toTopOf="@+id/Class3_Background"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/Class1_Background"
+                app:srcCompat="@drawable/backgroundpink" />
+
+            <TextView
+                android:id="@+id/Class2_Text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="76dp"
+                android:layout_marginTop="51dp"
+                android:layout_marginEnd="175dp"
+                android:layout_marginBottom="105dp"
+                android:fontFamily="@font/brandongrot"
+                android:text="@string/Class2Text"
+                android:textColor="#6E311C"
+                android:textSize="16sp"
+                app:layout_constraintBottom_toBottomOf="@+id/Class2_Background"
+                app:layout_constraintEnd_toEndOf="@+id/Class2_Background"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/Class2_Background"
+                app:layout_constraintTop_toTopOf="@+id/Class2_Background"
+                app:layout_constraintVertical_bias="0.2" />
+
+            <Button
+                android:id="@+id/Class2_BookBtn"
+                android:layout_width="121dp"
+                android:layout_height="35dp"
+                android:layout_marginStart="180dp"
+                android:layout_marginTop="123dp"
+                android:layout_marginEnd="19dp"
+                android:layout_marginBottom="15dp"
+                android:background="#D9876B"
+                android:backgroundTintMode="add"
+                android:fontFamily="@font/normalbrandongrot"
+                android:text="@string/book"
+                android:textColor="@color/white"
+                android:textSize="12sp"
+                app:layout_constraintBottom_toBottomOf="@+id/Class2_Background"
+                app:layout_constraintEnd_toEndOf="@+id/Class2_Background"
+                app:layout_constraintStart_toStartOf="@+id/Class2_Background"
+                app:layout_constraintTop_toTopOf="@+id/Class2_Background" />
+
+            <ImageView
+                android:id="@+id/Class2_Img"
+                android:layout_width="67dp"
+                android:layout_height="173dp"
+                android:layout_marginTop="1dp"
+                android:layout_marginEnd="253dp"
+                android:scaleType="fitXY"
+                android:src="@drawable/class_1"
+                app:layout_constraintBottom_toBottomOf="@+id/Class2_Background"
+                app:layout_constraintEnd_toEndOf="@+id/Class2_Background"
+                app:layout_constraintStart_toStartOf="@+id/Class2_Background"
+                app:layout_constraintTop_toTopOf="@+id/Class2_Background"
+                app:srcCompat="@drawable/class_2" />
+
+            <TextView
+                android:id="@+id/Class2_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="76dp"
+                android:layout_marginTop="17dp"
+                android:layout_marginEnd="151dp"
+                android:layout_marginBottom="136dp"
+                android:fontFamily="@font/normalbrandongrot"
+                android:text="@string/Class2Title"
+                android:textColor="#6E311C"
+                android:textSize="16sp"
+                app:layout_constraintBottom_toBottomOf="@+id/Class2_Background"
+                app:layout_constraintEnd_toEndOf="@+id/Class2_Background"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/Class2_Background"
+                app:layout_constraintTop_toTopOf="@+id/Class2_Background"
+                app:layout_constraintVertical_bias="0.0" />
+
+            <ImageView
+                android:id="@+id/Class3_Background"
+                android:layout_width="320dp"
+                android:layout_height="173dp"
+                android:layout_marginTop="136dp"
+                android:scaleType="fitXY"
+                android:src="@drawable/backgroundblue"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/Class1_Background"
+                app:srcCompat="@drawable/backgroundyellow" />
+
+            <TextView
+                android:id="@+id/Class3_Text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="76dp"
+                android:layout_marginTop="52dp"
+                android:layout_marginEnd="175dp"
+                android:layout_marginBottom="105dp"
+                android:fontFamily="@font/brandongrot"
+                android:text="@string/Class3Text"
+                android:textColor="#6E311C"
+                android:textSize="16sp"
+                app:layout_constraintBottom_toBottomOf="@+id/Class3_Background"
+                app:layout_constraintEnd_toEndOf="@+id/Class3_Background"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/Class3_Background"
+                app:layout_constraintTop_toTopOf="@+id/Class3_Background"
+                app:layout_constraintVertical_bias="1.0" />
+
+            <Button
+                android:id="@+id/Class3_BookBtn"
+                android:layout_width="121dp"
+                android:layout_height="35dp"
+                android:layout_marginStart="180dp"
+                android:layout_marginTop="123dp"
+                android:layout_marginEnd="19dp"
+                android:layout_marginBottom="15dp"
+                android:background="#D9876B"
+                android:backgroundTintMode="add"
+                android:fontFamily="@font/normalbrandongrot"
+                android:text="@string/book"
+                android:textColor="@color/white"
+                android:textSize="12sp"
+                app:layout_constraintBottom_toBottomOf="@+id/Class3_Background"
+                app:layout_constraintEnd_toEndOf="@+id/Class3_Background"
+                app:layout_constraintStart_toStartOf="@+id/Class3_Background"
+                app:layout_constraintTop_toTopOf="@+id/Class3_Background" />
+
+            <ImageView
+                android:id="@+id/Class3_Img"
+                android:layout_width="67dp"
+                android:layout_height="173dp"
+                android:layout_marginStart="1dp"
+                android:layout_marginTop="1dp"
+                android:layout_marginEnd="252dp"
+                android:scaleType="fitXY"
+                android:src="@drawable/class_1"
+                app:layout_constraintBottom_toBottomOf="@+id/Class3_Background"
+                app:layout_constraintEnd_toEndOf="@+id/Class3_Background"
+                app:layout_constraintStart_toStartOf="@+id/Class3_Background"
+                app:layout_constraintTop_toTopOf="@+id/Class3_Background"
+                app:layout_constraintVertical_bias="0.0"
+                app:srcCompat="@drawable/class_3" />
+
+            <TextView
+                android:id="@+id/Class3_Title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="76dp"
+                android:layout_marginTop="17dp"
+                android:layout_marginEnd="151dp"
+                android:layout_marginBottom="136dp"
+                android:fontFamily="@font/normalbrandongrot"
+                android:text="@string/Class3Title"
+                android:textColor="#6E311C"
+                android:textSize="16sp"
+                app:layout_constraintBottom_toBottomOf="@+id/Class3_Background"
+                app:layout_constraintEnd_toEndOf="@+id/Class3_Background"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/Class3_Background"
+                app:layout_constraintTop_toTopOf="@+id/Class3_Background"
+                app:layout_constraintVertical_bias="1.0" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
