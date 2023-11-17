@@ -24,7 +24,7 @@
     <string name="NewsTitle">Newsletter</string>
     <string name="notif">You only have 2 days until your plan ends, renew?</string>
     <string name="Account">My Account</string>
-    <string name="Membership">My Membership</string>
+    <string name="Membership"><a href='https://www.aberdeenceramicsstudio.com/get-in-touch'>My membership</a></string>
     <string name="LogOut">Log Out</string>
     <string name="SafetyTitle">ABERDEEN CERAMICS STUDIO HEALTH AND SAFETY INDUCTION</string>
     <string name="HealthAndSafety">*insert Safety Text*</string>
@@ -39,7 +39,7 @@
     <string name="Upload">Upload File</string>
     <string name="Submit">Submit</string>
     <string name="NewsLetter">*Insert Newsletter*</string>
-    <string name="book">Book Class</string>
+    <string name="book"><a href='https://www.aberdeenceramicsstudio.com/book-online'>Book class</a></string>
     <string name="FireEscapesTitle">Fire Escapes</string>
     <string name="FireEscapes">In the event of a fire it is important that everyone leaves by their nearest exit, these are located either side of the building, the entrance and the door marked fire escape. After exiting the building everyone must gather at the fire assembly point located at the east wall of Deemouth carpark.</string>
     <string name="FirstAidTitle">First Aid</string>

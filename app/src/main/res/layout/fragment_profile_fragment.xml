@@ -32,6 +32,7 @@
         android:background="#CFD9DA"
         android:backgroundTintMode="add"
         android:text="@string/Membership"
+
         android:textColor="#6E311C"
         android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
