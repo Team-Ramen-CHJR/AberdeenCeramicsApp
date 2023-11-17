@@ -2,31 +2,52 @@ package com.example.aberdeenceramicsapp;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import java.time.Duration;
+import java.time.Instant;
+import java.util.Timer;
+
 import android.os.Bundle;
-import android.view.MenuItem;
+import android.widget.TextView;
 
-import com.google.android.material.bottomnavigation.BottomNavigationView;
-import com.google.android.material.navigation.NavigationBarView;
-
-public class MainActivity extends AppCompatActivity implements NavigationBarView.OnItemSelectedListener{
-
-    //define the nav bar
-    BottomNavigationView bottomNavbarView;
+public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        bottomNavbarView = findViewById(R.id.navbarView);
-        bottomNavbarView.setOnItemSelectedListener(this);
-        bottomNavbarView.setSelectedItemId(R.id.profile_nb);
+        // this call should be moved to sign in once that is implemented
+        Instant start = startTimer();
+
     }
 
-    @Override
-    public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-        return false;
+    public Instant startTimer(){
+        TextView clock = (TextView)findViewById(R.id.userTimer);
+        Instant start = Instant.now();
+        Thread timer;
+        timer = new Thread(){
+            @Override public void run(){
+                for (;;) {
+                    try { Thread.sleep(1000L);
+                    } catch (InterruptedException ex) {/* ignore */ }
 
+                    long seconds = Duration.between(start, Instant.now()).getSeconds();
+                    long absSeconds = Math.abs(seconds);
+                    String formattedTime = String.format("%d:%02d:%02d", absSeconds / 3600, (absSeconds % 3600) / 60, absSeconds % 60); // https://stackoverflow.com/a/266846 accessed 05/11/2023
+
+                    runOnUiThread(new Runnable() {
+                        @Override
+                        public void run() {
+                            clock.setText(formattedTime);
+                        }
+                    });
+
+                }}
+        };
+        timer.setDaemon(true);
+        timer.start();
+        return start;
+    }
 
     }
     /*
@@ -83,4 +104,3 @@ db.collection("users")
 }
 
          */
-}

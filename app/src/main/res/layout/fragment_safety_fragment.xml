@@ -1,14 +1,327 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/frameLayout7"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".safety_fragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+    <ImageView
+        android:id="@+id/class2_Background2"
+        android:layout_width="357dp"
+        android:layout_height="627dp"
+        android:layout_marginTop="32dp"
+        android:scaleType="fitXY"
+        android:src="@drawable/backgroundblue"
+        app:layout_constraintBottom_toTopOf="@+id/Class3_Background"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/SafetyTitle"
+        app:layout_constraintVertical_bias="0.32999998"
+        app:srcCompat="@drawable/backgroundpink" />
 
-</FrameLayout>
+    <TextView
+        android:id="@+id/SafetyTitle"
+        android:layout_width="363dp"
+        android:layout_height="72dp"
+        android:fontFamily="@font/normalbrandongrot"
+        android:text="@string/SafetyTitle"
+        android:textColor="#6E311C"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.326"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.086" />
+
+    <ScrollView
+        android:layout_width="349dp"
+        android:layout_height="548dp"
+        android:layout_marginTop="165dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.515"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:id="@+id/linearLayout2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/FireEscapeTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/normalbrandongrot"
+                android:text="@string/FireEscapesTitle"
+                android:textColor="#6E311C"
+                tools:layout_conversion_absoluteHeight="19dp"
+                tools:layout_conversion_absoluteWidth="378dp"
+                tools:layout_editor_absoluteX="17dp"
+                tools:layout_editor_absoluteY="136dp" />
+
+            <TextView
+                android:id="@+id/FireText"
+                android:layout_width="match_parent"
+                android:layout_height="107dp"
+                android:fontFamily="@font/normalbrandongrot"
+                android:text="@string/FireEscapes"
+                android:textColor="#6E311C"
+                tools:layout_conversion_absoluteHeight="134dp"
+                tools:layout_conversion_absoluteWidth="378dp"
+                tools:layout_editor_absoluteX="17dp"
+                tools:layout_editor_absoluteY="155dp" />
+
+            <TextView
+                android:id="@+id/FirstAidTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/normalbrandongrot"
+                android:text="@string/FirstAidTitle"
+                android:textColor="#6E311C"
+                tools:layout_conversion_absoluteHeight="19dp"
+                tools:layout_conversion_absoluteWidth="378dp"
+                tools:layout_editor_absoluteX="17dp"
+                tools:layout_editor_absoluteY="136dp" />
+
+            <TextView
+                android:id="@+id/FirstAidText"
+                android:layout_width="match_parent"
+                android:layout_height="64dp"
+                android:fontFamily="@font/normalbrandongrot"
+                android:text="@string/FirstAid"
+                android:textColor="#6E311C"
+                tools:layout_conversion_absoluteHeight="134dp"
+                tools:layout_conversion_absoluteWidth="378dp"
+                tools:layout_editor_absoluteX="17dp"
+                tools:layout_editor_absoluteY="155dp" />
+
+            <TextView
+                android:id="@+id/ElecTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/normalbrandongrot"
+                android:text="@string/ElectricalHazardsTitle"
+                android:textColor="#6E311C"
+                tools:layout_conversion_absoluteHeight="19dp"
+                tools:layout_conversion_absoluteWidth="378dp"
+                tools:layout_editor_absoluteX="17dp"
+                tools:layout_editor_absoluteY="136dp" />
+
+            <TextView
+                android:id="@+id/ElecText"
+                android:layout_width="match_parent"
+                android:layout_height="211dp"
+                android:fontFamily="@font/normalbrandongrot"
+                android:text="@string/ElectricalHazards"
+                android:textColor="#6E311C"
+                tools:layout_conversion_absoluteHeight="134dp"
+                tools:layout_conversion_absoluteWidth="378dp"
+                tools:layout_editor_absoluteX="17dp"
+                tools:layout_editor_absoluteY="155dp" />
+
+            <TextView
+                android:id="@+id/WaterTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/normalbrandongrot"
+                android:text="@string/HotWaterTitle"
+                android:textColor="#6E311C"
+                tools:layout_conversion_absoluteHeight="19dp"
+                tools:layout_conversion_absoluteWidth="378dp"
+                tools:layout_editor_absoluteX="17dp"
+                tools:layout_editor_absoluteY="136dp" />
+
+            <TextView
+                android:id="@+id/WaterText"
+                android:layout_width="match_parent"
+                android:layout_height="69dp"
+                android:fontFamily="@font/normalbrandongrot"
+                android:text="@string/HotWater"
+                android:textColor="#6E311C"
+                tools:layout_conversion_absoluteHeight="134dp"
+                tools:layout_conversion_absoluteWidth="378dp" />
+
+            <TextView
+                android:id="@+id/PotteryTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/normalbrandongrot"
+                android:text="@string/WheelsTitle"
+                android:textColor="#6E311C"
+                tools:layout_conversion_absoluteHeight="19dp"
+                tools:layout_conversion_absoluteWidth="378dp"
+                tools:layout_editor_absoluteX="17dp"
+                tools:layout_editor_absoluteY="136dp" />
+
+            <TextView
+                android:id="@+id/PotteryText"
+                android:layout_width="match_parent"
+                android:layout_height="93dp"
+                android:fontFamily="@font/normalbrandongrot"
+                android:text="@string/Wheels"
+                android:textColor="#6E311C"
+                tools:layout_conversion_absoluteHeight="134dp"
+                tools:layout_conversion_absoluteWidth="378dp" />
+
+            <TextView
+                android:id="@+id/WasteTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/normalbrandongrot"
+                android:text="@string/WasteTitle"
+                android:textColor="#6E311C"
+                tools:layout_conversion_absoluteHeight="19dp"
+                tools:layout_conversion_absoluteWidth="378dp"
+                tools:layout_editor_absoluteX="17dp"
+                tools:layout_editor_absoluteY="136dp" />
+
+            <TextView
+                android:id="@+id/WasteText"
+                android:layout_width="match_parent"
+                android:layout_height="65dp"
+                android:fontFamily="@font/normalbrandongrot"
+                android:text="@string/Waste"
+                android:textColor="#6E311C"
+                tools:layout_conversion_absoluteHeight="134dp"
+                tools:layout_conversion_absoluteWidth="378dp" />
+
+            <TextView
+                android:id="@+id/SlipsTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/normalbrandongrot"
+                android:text="@string/SlipsTitle"
+                android:textColor="#6E311C"
+                tools:layout_conversion_absoluteHeight="19dp"
+                tools:layout_conversion_absoluteWidth="378dp"
+                tools:layout_editor_absoluteX="17dp"
+                tools:layout_editor_absoluteY="136dp" />
+
+            <TextView
+                android:id="@+id/SlipsText"
+                android:layout_width="match_parent"
+                android:layout_height="76dp"
+                android:fontFamily="@font/normalbrandongrot"
+                android:text="@string/Slips"
+                android:textColor="#6E311C"
+                tools:layout_conversion_absoluteHeight="134dp"
+                tools:layout_conversion_absoluteWidth="378dp" />
+
+            <TextView
+                android:id="@+id/CutsTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/normalbrandongrot"
+                android:text="@string/CutsTitle"
+                android:textColor="#6E311C"
+                tools:layout_conversion_absoluteHeight="19dp"
+                tools:layout_conversion_absoluteWidth="378dp"
+                tools:layout_editor_absoluteX="17dp"
+                tools:layout_editor_absoluteY="136dp" />
+
+            <TextView
+                android:id="@+id/CutsText"
+                android:layout_width="match_parent"
+                android:layout_height="143dp"
+                android:fontFamily="@font/normalbrandongrot"
+                android:text="@string/Cuts"
+                android:textColor="#6E311C"
+                tools:layout_conversion_absoluteHeight="134dp"
+                tools:layout_conversion_absoluteWidth="378dp" />
+
+            <TextView
+                android:id="@+id/KilnsTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/normalbrandongrot"
+                android:text="@string/KilnsTitle"
+                android:textColor="#6E311C"
+                tools:layout_conversion_absoluteHeight="19dp"
+                tools:layout_conversion_absoluteWidth="378dp"
+                tools:layout_editor_absoluteX="17dp"
+                tools:layout_editor_absoluteY="136dp" />
+
+            <TextView
+                android:id="@+id/KilnsText"
+                android:layout_width="match_parent"
+                android:layout_height="125dp"
+                android:fontFamily="@font/normalbrandongrot"
+                android:text="@string/Kilns"
+                android:textColor="#6E311C"
+                tools:layout_conversion_absoluteHeight="134dp"
+                tools:layout_conversion_absoluteWidth="378dp" />
+
+            <TextView
+                android:id="@+id/ResTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/normalbrandongrot"
+                android:text="@string/ResponsibilitiesTitle"
+                android:textColor="#6E311C"
+                tools:layout_conversion_absoluteHeight="19dp"
+                tools:layout_conversion_absoluteWidth="378dp"
+                tools:layout_editor_absoluteX="17dp"
+                tools:layout_editor_absoluteY="136dp" />
+
+            <TextView
+                android:id="@+id/ResText"
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                android:fontFamily="@font/normalbrandongrot"
+                android:text="@string/Responsibilties"
+                android:textColor="#6E311C"
+                tools:layout_conversion_absoluteHeight="134dp"
+                tools:layout_conversion_absoluteWidth="378dp" />
+
+            <TextView
+                android:id="@+id/ClayTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/normalbrandongrot"
+                android:text="@string/ClayTitle"
+                android:textColor="#6E311C"
+                tools:layout_conversion_absoluteHeight="19dp"
+                tools:layout_conversion_absoluteWidth="378dp"
+                tools:layout_editor_absoluteX="17dp"
+                tools:layout_editor_absoluteY="136dp" />
+
+            <TextView
+                android:id="@+id/ClayText"
+                android:layout_width="match_parent"
+                android:layout_height="1615dp"
+                android:fontFamily="@font/normalbrandongrot"
+                android:text="@string/Clay"
+                android:textColor="#6E311C"
+                tools:layout_conversion_absoluteHeight="134dp"
+                tools:layout_conversion_absoluteWidth="378dp" />
+
+            <TextView
+                android:id="@+id/KilnRmTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/normalbrandongrot"
+                android:text="@string/KilnRoomTitle"
+                android:textColor="#6E311C"
+                tools:layout_conversion_absoluteHeight="19dp"
+                tools:layout_conversion_absoluteWidth="378dp"
+                tools:layout_editor_absoluteX="17dp"
+                tools:layout_editor_absoluteY="136dp" />
+
+            <TextView
+                android:id="@+id/KilnRmText"
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                android:fontFamily="@font/normalbrandongrot"
+                android:text="@string/KilnRoom"
+                android:textColor="#6E311C"
+                tools:layout_conversion_absoluteHeight="134dp"
+                tools:layout_conversion_absoluteWidth="378dp" />
+
+        </LinearLayout>
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
