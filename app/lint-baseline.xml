@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<issues format="6" by="lint 8.1.2" type="baseline" client="gradle" dependencies="false" name="AGP (8.1.2)" variant="fatal" version="8.1.2">
+
+    <issue
+        id="NotSibling"
+        message="`@+id/Class3_Background` is not a sibling in the same `ConstraintLayout`"
+        errorLine1="        app:layout_constraintBottom_toTopOf=&quot;@+id/Class3_Background&quot;"
+        errorLine2="        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/layout/fragment_safety_fragment.xml"
+            line="17"
+            column="9"/>
+    </issue>
+
+</issues>
