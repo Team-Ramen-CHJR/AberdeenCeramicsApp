@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">AberdeenCeramicsApp</string>
+    <string name="app_name">aberdeenceramicsapp</string>
 
     <!--NavBar Strings-->
     <string name="profile_nb">profile</string>
