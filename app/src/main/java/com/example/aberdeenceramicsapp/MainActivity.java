@@ -23,12 +23,42 @@ public class MainActivity extends AppCompatActivity  {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-//        bottomNavigationView.setOnNavigationItemSelectedListener(this);
-//        bottomNavigationView.setContentView(R.layout.fragment_newsletter_fragment);
+        //define fragment
         NavHostFragment navHostFragment = (NavHostFragment) getSupportFragmentManager().findFragmentById(R.id.nav_host_fragment);
+
+        //create nav controller
         NavController navController = navHostFragment.getNavController();
         BottomNavigationView bottomNav = findViewById(R.id.navbarView);
         NavigationUI.setupWithNavController(bottomNav, navController);
+
+        bottomNav.setOnNavigationItemSelectedListener(item -> {
+            int itemId = item.getItemId();
+
+            //temp vars Can be changed later
+            boolean loggedIn = false;
+            boolean clockedIn = false;
+
+            if(itemId == R.id.profile_menu){
+                if(loggedIn){
+                        navController.navigate(R.id.profile_fragment);
+                    } else if (loggedIn == false){
+                        navController.navigate(R.id.signIn_fragment);
+                    }
+            } else if (itemId == R.id.clockIn_menu){
+                if(clockedIn){
+                    navController.navigate(R.id.clockOut_fragment);
+                } else if (clockedIn == false) {
+                    navController.navigate(R.id.clockIn_fragment);
+                }
+            } else if (itemId == R.id.safety_menu){
+                navController.navigate(R.id.safety_fragment);
+            } else if (itemId == R.id.classes_menu){
+                navController.navigate(R.id.classes_fragment);
+            }
+
+            return true;
+
+        });
 
 
 

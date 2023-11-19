@@ -22,6 +22,12 @@
         <action
             android:id="@+id/action_newsletter_fragment_to_clockIn_fragment"
             app:destination="@id/clockIn_fragment" />
+        <action
+            android:id="@+id/action_newsletter_fragment_to_signIn_fragment"
+            app:destination="@id/signIn_fragment" />
+        <action
+            android:id="@+id/action_newsletter_fragment_to_clockOut_fragment"
+            app:destination="@id/clockOut_fragment" />
     </fragment>
     <fragment
         android:id="@+id/profile_fragment"
@@ -37,10 +43,24 @@
         android:id="@+id/safety_fragment"
         android:name="com.example.aberdeenceramicsapp.safety_fragment"
         android:label="fragment_safety_fragment"
-        tools:layout="@layout/fragment_safety_fragment" />
+        tools:layout="@layout/fragment_safety_fragment" >
+        <action
+            android:id="@+id/action_safety_fragment_to_clockIn_fragment3"
+            app:destination="@id/clockIn_fragment" />
+    </fragment>
     <fragment
         android:id="@+id/clockIn_fragment"
         android:name="com.example.aberdeenceramicsapp.clockIn_fragment"
         android:label="fragment_clock_in_fragment"
         tools:layout="@layout/fragment_clock_in_fragment" />
+    <fragment
+        android:id="@+id/signIn_fragment"
+        android:name="com.example.aberdeenceramicsapp.signIn_fragment"
+        android:label="fragment_sign_in_fragment"
+        tools:layout="@layout/fragment_sign_in_fragment" />
+    <fragment
+        android:id="@+id/clockOut_fragment"
+        android:name="com.example.aberdeenceramicsapp.clockOut_fragment"
+        android:label="fragment_clock_out_fragment"
+        tools:layout="@layout/fragment_clock_out_fragment" />
 </navigation>
