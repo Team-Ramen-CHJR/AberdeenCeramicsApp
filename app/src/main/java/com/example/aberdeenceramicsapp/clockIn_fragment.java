@@ -2,11 +2,23 @@ package com.example.aberdeenceramicsapp;
 
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.firestore.DocumentSnapshot;
+import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.QueryDocumentSnapshot;
+import com.google.firebase.firestore.QuerySnapshot;
+
+import java.time.Duration;
+import java.time.Instant;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -53,6 +65,15 @@ public class clockIn_fragment extends Fragment {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
+        Button clockBtn = (Button) getView().findViewById(R.id.clockBtn);
+
+        clockBtn.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                MainActivity mainActivity = (MainActivity) getActivity();
+                mainActivity.startTimer();
+            }
+        });
+
     }
 
     @Override

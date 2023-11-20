@@ -26,7 +26,15 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class MainActivity extends AppCompatActivity {
     FirebaseFirestore firestore;
+    private static Instant start;
     BottomNavigationView bottomNavigationView;
+
+    public void setStart(Instant start){
+        this.start = start;
+    };
+    public Instant getStart(){
+        return this.start;
+    };
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,7 +42,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         firestore = FirebaseFirestore.getInstance();
         // this call should be moved to sign in once that is implemented instant start
-        Instant start = startTimer();
+        //Instant start = startTimer();
 
         //adding a user
         Map<String, Object> users = new HashMap<>(); //each key/value pair in the map corresponds to a line of JSON. key being the variable name and value being the data
@@ -73,6 +81,7 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         });
+
 
 
         //navstuff
@@ -118,6 +127,7 @@ public class MainActivity extends AppCompatActivity {
     public Instant startTimer(){
         TextView clock = (TextView)findViewById(R.id.userTimer);
         Instant start = Instant.now();
+        setStart(start);
         Thread timer;
         timer = new Thread(){
             @Override public void run(){
@@ -144,57 +154,3 @@ public class MainActivity extends AppCompatActivity {
     }
 
     }
-    /*
-    public void databaseStuff(){
-
-        some random example code from tools>firbase> cloud firestore
-        URL url = new URL("https://teamramen-c8713-default-rtdb.europe-west1.firebasedatabase.app//") // this should be the url but I might be wrong. it will need to be passed when using getInstance
-        FirebaseFirestore db = FirebaseFirestore.getInstance();
-        // Create a new user with a first and last name
-Map<String, Object> user = new HashMap<>();
-user.put("first", "Ada");
-user.put("last", "Lovelace");
-user.put("born", 1815);
-
-// Add a new document with a generated ID
-db.collection("users")
-        .add(user)
-        .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
-            @Override
-            public void onSuccess(DocumentReference documentReference) {
-                Log.d(TAG, "DocumentSnapshot added with ID: " + documentReference.getId());
-            }
-        })
-        .addOnFailureListener(new OnFailureListener() {
-            @Override
-            public void onFailure(@NonNull Exception e) {
-                Log.w(TAG, "Error adding document", e);
-            }
-        });
-
-        // Create a new user with a first, middle, and last name
-Map<String, Object> user = new HashMap<>();
-user.put("first", "Alan");
-user.put("middle", "Mathison");
-user.put("last", "Turing");
-user.put("born", 1912);
-
-// Add a new document with a generated ID
-db.collection("users")
-        .add(user)
-        .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
-            @Override
-            public void onSuccess(DocumentReference documentReference) {
-                Log.d(TAG, "DocumentSnapshot added with ID: " + documentReference.getId());
-            }
-        })
-        .addOnFailureListener(new OnFailureListener() {
-            @Override
-            public void onFailure(@NonNull Exception e) {
-                Log.w(TAG, "Error adding document", e);
-            }
-        });
-
-}
-
-         */
