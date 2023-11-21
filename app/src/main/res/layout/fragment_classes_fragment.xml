@@ -34,6 +34,7 @@
                     android:background="#D9876B"
                     android:backgroundTintMode="add"
                     android:fontFamily="@font/normalbrandongrot"
+                    android:onClick="linkToClassOnSite"
                     android:text="book class"
                     android:textAppearance="@style/TextAppearance.AppCompat.Body1"
                     android:textColor="#FFFFFF"
@@ -59,19 +60,19 @@
 
                 <TextView
                     android:id="@+id/C1_Description"
-                    android:layout_width="93dp"
-                    android:layout_height="39dp"
+                    android:layout_width="217dp"
+                    android:layout_height="50dp"
                     android:layout_marginBottom="92dp"
                     android:fontFamily="@font/normalbrandongrot"
-                    android:text="TextView"
+                    android:text="@string/HandbuildingDesc"
                     android:textColor="#6E311C"
                     android:textSize="16sp"
                     app:layout_constraintBottom_toBottomOf="@+id/C1_BG"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.292"
+                    app:layout_constraintHorizontal_bias="0.568"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintVertical_bias="0.949" />
+                    app:layout_constraintVertical_bias="1.0" />
 
                 <TextView
                     android:id="@+id/C1_Title"
@@ -115,6 +116,7 @@
                     android:background="#D9876B"
                     android:backgroundTintMode="add"
                     android:fontFamily="@font/normalbrandongrot"
+                    android:onClick="linkToClassOnSite"
                     android:text="book class"
                     android:textAppearance="@style/TextAppearance.AppCompat.Body1"
                     android:textColor="#FFFFFF"
@@ -140,19 +142,20 @@
 
                 <TextView
                     android:id="@+id/c2_Description"
-                    android:layout_width="93dp"
-                    android:layout_height="39dp"
+                    android:layout_width="217dp"
+                    android:layout_height="50dp"
                     android:layout_marginTop="60dp"
                     android:layout_marginBottom="95dp"
                     android:fontFamily="@font/normalbrandongrot"
-                    android:text="TextView"
+                    android:text="@string/throwingDesc"
                     android:textColor="#6E311C"
                     android:textSize="16sp"
                     app:layout_constraintBottom_toBottomOf="@+id/c2_BG"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.292"
+                    app:layout_constraintHorizontal_bias="0.568"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.0" />
 
                 <TextView
                     android:id="@+id/c2_Title"
@@ -161,7 +164,7 @@
                     android:layout_marginTop="12dp"
                     android:layout_marginBottom="133dp"
                     android:fontFamily="@font/normalbrandongrot"
-                    android:text="@string/Class1Name"
+                    android:text="@string/throwingTue"
                     android:textColor="#6E311C"
                     android:textSize="20sp"
                     app:layout_constraintBottom_toBottomOf="@+id/c2_BG"
@@ -193,6 +196,7 @@
                     android:background="#D9876B"
                     android:backgroundTintMode="add"
                     android:fontFamily="@font/normalbrandongrot"
+                    android:onClick="linkToClassOnSite"
                     android:text="book class"
                     android:textAppearance="@style/TextAppearance.AppCompat.Body1"
                     android:textColor="#FFFFFF"
@@ -214,19 +218,19 @@
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintVertical_bias="0.304" />
+                    app:layout_constraintVertical_bias="0.454" />
 
                 <TextView
                     android:id="@+id/C3_Description"
-                    android:layout_width="93dp"
-                    android:layout_height="39dp"
-                    android:layout_marginTop="68dp"
+                    android:layout_width="217dp"
+                    android:layout_height="50dp"
+                    android:layout_marginTop="72dp"
                     android:fontFamily="@font/normalbrandongrot"
-                    android:text="TextView"
+                    android:text="@string/throwingDesc"
                     android:textColor="#6E311C"
                     android:textSize="16sp"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.304"
+                    app:layout_constraintHorizontal_bias="0.598"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
@@ -239,7 +243,7 @@
                     android:layout_marginEnd="72dp"
                     android:layout_marginBottom="124dp"
                     android:fontFamily="@font/normalbrandongrot"
-                    android:text="@string/Class1Name"
+                    android:text="@string/throwingThur"
                     android:textColor="#6E311C"
                     android:textSize="20sp"
                     app:layout_constraintBottom_toBottomOf="@+id/c3_BG"
@@ -270,6 +274,7 @@
                     android:background="#D9876B"
                     android:backgroundTintMode="add"
                     android:fontFamily="@font/normalbrandongrot"
+                    android:onClick="linkToClassOnSite"
                     android:text="book class"
                     android:textAppearance="@style/TextAppearance.AppCompat.Body1"
                     android:textColor="#FFFFFF"
@@ -295,19 +300,20 @@
 
                 <TextView
                     android:id="@+id/C4_Description"
-                    android:layout_width="93dp"
-                    android:layout_height="39dp"
+                    android:layout_width="217dp"
+                    android:layout_height="50dp"
                     android:layout_marginTop="56dp"
                     android:layout_marginBottom="99dp"
                     android:fontFamily="@font/normalbrandongrot"
-                    android:text="TextView"
+                    android:text="@string/mugDesc"
                     android:textColor="#6E311C"
                     android:textSize="16sp"
                     app:layout_constraintBottom_toBottomOf="@+id/C4_BG"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.292"
+                    app:layout_constraintHorizontal_bias="0.568"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.0" />
 
                 <TextView
                     android:id="@+id/C4_Title"
@@ -318,7 +324,7 @@
                     android:layout_marginEnd="76dp"
                     android:layout_marginBottom="137dp"
                     android:fontFamily="@font/normalbrandongrot"
-                    android:text="@string/Class1Name"
+                    android:text="@string/mugMaking"
                     android:textColor="#6E311C"
                     android:textSize="20sp"
                     app:layout_constraintBottom_toBottomOf="@+id/C4_BG"
@@ -349,6 +355,7 @@
                     android:background="#D9876B"
                     android:backgroundTintMode="add"
                     android:fontFamily="@font/normalbrandongrot"
+                    android:onClick="linkToClassOnSite"
                     android:text="book class"
                     android:textAppearance="@style/TextAppearance.AppCompat.Body1"
                     android:textColor="#FFFFFF"
@@ -374,30 +381,31 @@
 
                 <TextView
                     android:id="@+id/C5_Description"
-                    android:layout_width="93dp"
-                    android:layout_height="39dp"
-                    android:layout_marginTop="60dp"
+                    android:layout_width="217dp"
+                    android:layout_height="50dp"
+                    android:layout_marginTop="70dp"
                     android:layout_marginBottom="96dp"
                     android:fontFamily="@font/normalbrandongrot"
-                    android:text="TextView"
+                    android:text="@string/fourWeekDesc"
                     android:textColor="#6E311C"
                     android:textSize="16sp"
                     app:layout_constraintBottom_toBottomOf="@+id/C5_BG"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.292"
+                    app:layout_constraintHorizontal_bias="0.56"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.0" />
 
                 <TextView
                     android:id="@+id/C5_Title"
-                    android:layout_width="198dp"
-                    android:layout_height="45dp"
+                    android:layout_width="200dp"
+                    android:layout_height="60dp"
                     android:layout_marginStart="78dp"
                     android:layout_marginTop="11dp"
                     android:layout_marginEnd="76dp"
                     android:layout_marginBottom="134dp"
                     android:fontFamily="@font/normalbrandongrot"
-                    android:text="@string/Class1Name"
+                    android:text="@string/FourPottery"
                     android:textColor="#6E311C"
                     android:textSize="20sp"
                     app:layout_constraintBottom_toBottomOf="@+id/C5_BG"
@@ -429,6 +437,7 @@
                     android:background="#D9876B"
                     android:backgroundTintMode="add"
                     android:fontFamily="@font/normalbrandongrot"
+                    android:onClick="linkToClassOnSite"
                     android:text="book class"
                     android:textAppearance="@style/TextAppearance.AppCompat.Body1"
                     android:textColor="#FFFFFF"
@@ -454,19 +463,20 @@
 
                 <TextView
                     android:id="@+id/C6_Description"
-                    android:layout_width="93dp"
-                    android:layout_height="39dp"
+                    android:layout_width="217dp"
+                    android:layout_height="50dp"
                     android:layout_marginTop="60dp"
                     android:layout_marginBottom="97dp"
                     android:fontFamily="@font/normalbrandongrot"
-                    android:text="TextView"
+                    android:text="@string/kidsDesc"
                     android:textColor="#6E311C"
                     android:textSize="16sp"
                     app:layout_constraintBottom_toBottomOf="@+id/C6_BG"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.292"
+                    app:layout_constraintHorizontal_bias="0.568"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="1.0" />
 
                 <TextView
                     android:id="@+id/C6_Title"
@@ -477,7 +487,7 @@
                     android:layout_marginEnd="76dp"
                     android:layout_marginBottom="135dp"
                     android:fontFamily="@font/normalbrandongrot"
-                    android:text="@string/Class1Name"
+                    android:text="@string/kidsCreatures"
                     android:textColor="#6E311C"
                     android:textSize="20sp"
                     app:layout_constraintBottom_toBottomOf="@+id/C6_BG"
@@ -508,6 +518,7 @@
                     android:background="#D9876B"
                     android:backgroundTintMode="add"
                     android:fontFamily="@font/normalbrandongrot"
+                    android:onClick="linkToClassOnSite"
                     android:text="book class"
                     android:textAppearance="@style/TextAppearance.AppCompat.Body1"
                     android:textColor="#FFFFFF"
@@ -533,30 +544,31 @@
 
                 <TextView
                     android:id="@+id/C7_Description"
-                    android:layout_width="93dp"
-                    android:layout_height="39dp"
-                    android:layout_marginTop="64dp"
+                    android:layout_width="217dp"
+                    android:layout_height="50dp"
+                    android:layout_marginTop="74dp"
                     android:layout_marginBottom="93dp"
                     android:fontFamily="@font/normalbrandongrot"
-                    android:text="TextView"
+                    android:text="@string/teaDesc"
                     android:textColor="#6E311C"
                     android:textSize="16sp"
                     app:layout_constraintBottom_toBottomOf="@+id/C7_BG"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.292"
+                    app:layout_constraintHorizontal_bias="0.568"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.0" />
 
                 <TextView
                     android:id="@+id/C7_Title"
                     android:layout_width="198dp"
-                    android:layout_height="45dp"
+                    android:layout_height="60dp"
                     android:layout_marginStart="78dp"
                     android:layout_marginTop="16dp"
                     android:layout_marginEnd="76dp"
                     android:layout_marginBottom="129dp"
                     android:fontFamily="@font/normalbrandongrot"
-                    android:text="@string/Class1Name"
+                    android:text="@string/teaLight"
                     android:textColor="#6E311C"
                     android:textSize="20sp"
                     app:layout_constraintBottom_toBottomOf="@+id/C7_BG"
@@ -566,85 +578,6 @@
 
                 <ImageView
                     android:id="@+id/C7_Image"
-                    android:layout_width="66dp"
-                    android:layout_height="189dp"
-                    android:scaleType="fitXY"
-                    android:src="@drawable/class_1"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
-
-            </androidx.constraintlayout.widget.ConstraintLayout>
-
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:id="@+id/Class8"
-                android:layout_width="match_parent"
-                android:layout_height="199dp">
-
-                <Button
-                    android:id="@+id/C8_Book"
-                    android:layout_width="134dp"
-                    android:layout_height="36dp"
-                    android:background="#D9876B"
-                    android:backgroundTintMode="add"
-                    android:fontFamily="@font/normalbrandongrot"
-                    android:text="book class"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-                    android:textColor="#FFFFFF"
-                    android:textSize="24sp"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.925"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintVertical_bias="0.903" />
-
-                <ImageView
-                    android:id="@+id/C8_BG"
-                    android:layout_width="355dp"
-                    android:layout_height="190dp"
-                    android:scaleType="fitXY"
-                    android:src="@drawable/backgroundpink"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintVertical_bias="0.304" />
-
-                <TextView
-                    android:id="@+id/C8_Description"
-                    android:layout_width="93dp"
-                    android:layout_height="39dp"
-                    android:layout_marginTop="44dp"
-                    android:layout_marginBottom="109dp"
-                    android:fontFamily="@font/normalbrandongrot"
-                    android:text="TextView"
-                    android:textColor="#6E311C"
-                    android:textSize="16sp"
-                    app:layout_constraintBottom_toBottomOf="@+id/C8_BG"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.292"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
-
-                <TextView
-                    android:id="@+id/C8_Title"
-                    android:layout_width="198dp"
-                    android:layout_height="45dp"
-                    android:layout_marginStart="78dp"
-                    android:layout_marginTop="6dp"
-                    android:layout_marginEnd="76dp"
-                    android:layout_marginBottom="139dp"
-                    android:fontFamily="@font/normalbrandongrot"
-                    android:text="@string/Class1Name"
-                    android:textColor="#6E311C"
-                    android:textSize="20sp"
-                    app:layout_constraintBottom_toBottomOf="@+id/C8_BG"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="@+id/C8_BG"
-                    app:layout_constraintTop_toTopOf="@+id/C8_BG" />
-
-                <ImageView
-                    android:id="@+id/C8_Image"
                     android:layout_width="66dp"
                     android:layout_height="189dp"
                     android:scaleType="fitXY"
