@@ -6,11 +6,15 @@ import androidx.navigation.NavController;
 import androidx.navigation.fragment.NavHostFragment;
 import androidx.navigation.ui.NavigationUI;
 
+import java.text.SimpleDateFormat;
 import java.time.Duration;
 import java.time.Instant;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Timer;
+
+import java.util.Date;
+import java.util.Locale;
 
 import android.os.Bundle;
 import android.view.MenuItem;
@@ -48,7 +52,7 @@ public class MainActivity extends AppCompatActivity {
         Map<String, Object> users = new HashMap<>(); //each key/value pair in the map corresponds to a line of JSON. key being the variable name and value being the data
 
         users.put("email", "newuser@email.com");
-        users.put("lastLog", System.currentTimeMillis()); // this is for timestamp. Im going to have a look at formatting it better but for now dont worry about it
+        users.put("lastLog", new SimpleDateFormat("dd MMMM yyyy HH:mm:ss", Locale.ENGLISH).format(new Date(System.currentTimeMillis()))); // this is for timestamp. Im going to have a look at formatting it better but for now dont worry about it
         String membership = "pt"; //using a variable instead of just putting pt straight in as I am reusing it later
         users.put("membership", membership);
         users.put("password", "Password2");

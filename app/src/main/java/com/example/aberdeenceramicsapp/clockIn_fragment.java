@@ -58,6 +58,7 @@ public class clockIn_fragment extends Fragment {
         return fragment;
     }
 
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -65,15 +66,6 @@ public class clockIn_fragment extends Fragment {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
-        Button clockBtn = (Button) getView().findViewById(R.id.clockBtn);
-
-        clockBtn.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-                MainActivity mainActivity = (MainActivity) getActivity();
-                mainActivity.startTimer();
-            }
-        });
-
     }
 
     @Override
@@ -81,5 +73,19 @@ public class clockIn_fragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_clock_in_fragment, container, false);
+    }
+
+    @Override
+    public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+
+        Button clockBtn = view.findViewById(R.id.ClockBtn);
+
+        clockBtn.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                MainActivity mainActivity = (MainActivity) getActivity();
+                mainActivity.startTimer();
+            }
+        });
     }
 }

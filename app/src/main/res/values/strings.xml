@@ -37,6 +37,8 @@
     <string name="Subject">Subject</string>
     <string name="Message">Message</string>
     <string name="Upload">Upload File</string>
+    <string name="add">Add</string>
+    <string name="Delete">Delete</string>
     <string name="Submit">Submit</string>
     <string name="NewsLetter">*Insert Newsletter*</string>
     <string name="book"><a href='https://www.aberdeenceramicsstudio.com/book-online'>Book class</a></string>

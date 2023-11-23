@@ -10,6 +10,12 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.Locale;
+
 /**
  * A simple {@link Fragment} subclass.
  * Use the {@link signIn_fragment#newInstance} factory method to
@@ -65,5 +71,60 @@ public class signIn_fragment extends Fragment {
         return inflater.inflate(R.layout.fragment_sign_in_fragment, container, false);
     }
 
+
+
    //log in data getting code
+
+
+
+    //code to be used when the user logs in. lastLogIn is lastLog from fb, timeLeft is time remaining
+
+//    boolean reset = check(lastLogIn);
+//        if(reset){
+//        if(membership=="pt"){
+//            timeLeft = 21600;
+//        }
+//        else if(membership == "ft"){
+//            timeLeft = 43200;
+//        }
+//    }
+
+    //function to check if the users time should be reset, lastLogIn should be in the format String timestamp = "23 November 2023 17:40:52";
+    public static boolean check(String lastLogIn){
+        boolean reset = false;
+        Calendar c = Calendar.getInstance();
+        Date today = new Date();
+        System.out.println(today);
+
+        c.setTime(today);
+
+
+
+
+
+        String[] parts = lastLogIn.split(" ");
+        String dateString = String.format("%s %s %s", parts[0], parts[1], parts[2]);
+        String timeString = parts[3];
+
+        SimpleDateFormat dateFormat = new SimpleDateFormat("dd MMMM yyyy HH:mm:ss", Locale.ENGLISH);
+        Date date = null;
+        try {
+            date = dateFormat.parse(dateString + " " + timeString);
+            System.out.println(date);
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+
+
+        c.setTime(date);
+
+        while (!c.getTime().after(today)) {
+            if (c.get(Calendar.DAY_OF_WEEK) == Calendar.MONDAY) {
+                return true;
+            }
+            c.add(Calendar.DAY_OF_MONTH, 1);
+        }
+
+        return reset;
+    }
 }
