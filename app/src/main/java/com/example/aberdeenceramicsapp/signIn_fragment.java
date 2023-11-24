@@ -1,50 +1,32 @@
 package com.example.aberdeenceramicsapp;
 
 import android.os.Bundle;
-
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
-
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.EditText;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.QueryDocumentSnapshot;
+import com.google.firebase.firestore.QuerySnapshot;
 
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.Calendar;
-import java.util.Date;
-import java.util.Locale;
-
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link signIn_fragment#newInstance} factory method to
- * create an instance of this fragment.
- */
 public class signIn_fragment extends Fragment {
 
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
-
-    // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
+    FirebaseFirestore firestore;
 
     public signIn_fragment() {
         // Required empty public constructor
     }
 
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment signIn_fragment.
-     */
-    // TODO: Rename and change types and number of parameters
     public static signIn_fragment newInstance(String param1, String param2) {
         signIn_fragment fragment = new signIn_fragment();
         Bundle args = new Bundle();
@@ -61,33 +43,80 @@ public class signIn_fragment extends Fragment {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
-
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_sign_in_fragment, container, false);
     }
 
+    @Override
+    public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+
+        Button clockBtn = view.findViewById(R.id.SignUp);
+
+        clockBtn.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                firestore = FirebaseFirestore.getInstance();
+
+                final EditText emailInput = (EditText) v.findViewById(R.id.EmailInput);
+                String email = emailInput.getText().toString();
+                final EditText passwordInput = (EditText) v.findViewById(R.id.PasswordInput);
+                String password = passwordInput.getText().toString();
+
+                firestore.collection("users").whereEqualTo("email", email).get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+                    @Override
+                    public void onComplete(@NonNull Task<QuerySnapshot> task) {
+                        if (task.isSuccessful()) {
+                            String dbPass = " ";
+                            String lastLogIn=" ";
+                            int timeLeft = 0;
+                            String membership = " ";
+                            for (QueryDocumentSnapshot document : task.getResult()) {
+                                // Fetch from database as Map
+                                dbPass = (String) document.getData().get("password");
+                                lastLogIn = (String) document.getData().get("lastLog");
+                                timeLeft = (int) document.getData().get("time remaining");
+                                membership = (String) document.getData().get();
+                            }
+
+                            if (password.equals(dbPass)) {
+                                MainActivity.setLoggedIn(true);
+
+                                boolean reset = check(lastLogIn);
+                                if(reset){
+                                    if(membership=="pt"){
+                                        timeLeft = 21600;
+                                    }
+                                    else if(membership == "ft"){
+                                        timeLeft = 43200;
+                                    }
+                                }
+
+
+
+
+
+
+
+
+                            }
+                        }
+                    }
+                });
+            }
+        });
 
 
    //log in data getting code
 
-
+    //stuff for pulling from firebase. whereEqualTo searches the collection for records with the field that matches the specified values
 
     //code to be used when the user logs in. lastLogIn is lastLog from fb, timeLeft is time remaining
 
-//    boolean reset = check(lastLogIn);
-//        if(reset){
-//        if(membership=="pt"){
-//            timeLeft = 21600;
-//        }
-//        else if(membership == "ft"){
-//            timeLeft = 43200;
-//        }
-//    }
+
 
     //function to check if the users time should be reset, lastLogIn should be in the format String timestamp = "23 November 2023 17:40:52";
     public static boolean check(String lastLogIn){
@@ -127,4 +156,5 @@ public class signIn_fragment extends Fragment {
 
         return reset;
     }
-}
+    }
+};

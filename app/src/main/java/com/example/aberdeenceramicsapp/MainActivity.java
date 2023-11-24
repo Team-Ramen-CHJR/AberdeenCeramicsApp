@@ -31,6 +31,7 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 public class MainActivity extends AppCompatActivity {
     FirebaseFirestore firestore;
     private static Instant start;
+    private static boolean loggedIn;
     BottomNavigationView bottomNavigationView;
 
     public void setStart(Instant start){
@@ -40,11 +41,24 @@ public class MainActivity extends AppCompatActivity {
         return this.start;
     };
 
+
+
+    public boolean isLoggedIn() {
+        return loggedIn;
+    }
+
+    public static void setLoggedIn(boolean loggedInSet) {
+        loggedIn = loggedInSet;
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setLoggedIn(false);
+        this.instance = new MainActivity();
         setContentView(R.layout.activity_main);
         firestore = FirebaseFirestore.getInstance();
+
         // this call should be moved to sign in once that is implemented instant start
         //Instant start = startTimer();
 
@@ -102,7 +116,6 @@ public class MainActivity extends AppCompatActivity {
             int itemId = item.getItemId();
 
             //temp vars Can be changed later
-            boolean loggedIn = false;
             boolean clockedIn = false;
 
             if(itemId == R.id.profile_menu){
