@@ -2,30 +2,18 @@ package com.example.aberdeenceramicsapp;
 
 import android.os.Bundle;
 
-import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
-
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.Task;
-import com.google.firebase.firestore.DocumentSnapshot;
-import com.google.firebase.firestore.FirebaseFirestore;
-import com.google.firebase.firestore.QueryDocumentSnapshot;
-import com.google.firebase.firestore.QuerySnapshot;
-
-import java.time.Duration;
-import java.time.Instant;
 
 /**
  * A simple {@link Fragment} subclass.
- * Use the {@link clockIn_fragment#newInstance} factory method to
+ * Use the {@link newsletter_admin_fragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class clockIn_fragment extends Fragment {
+public class newsletter_admin_fragment extends Fragment {
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -36,7 +24,7 @@ public class clockIn_fragment extends Fragment {
     private String mParam1;
     private String mParam2;
 
-    public clockIn_fragment() {
+    public newsletter_admin_fragment() {
         // Required empty public constructor
     }
 
@@ -46,18 +34,17 @@ public class clockIn_fragment extends Fragment {
      *
      * @param param1 Parameter 1.
      * @param param2 Parameter 2.
-     * @return A new instance of fragment clockIn_fragment.
+     * @return A new instance of fragment newsletter_admin_fragment.
      */
     // TODO: Rename and change types and number of parameters
-    public static clockIn_fragment newInstance(String param1, String param2) {
-        clockIn_fragment fragment = new clockIn_fragment();
+    public static newsletter_admin_fragment newInstance(String param1, String param2) {
+        newsletter_admin_fragment fragment = new newsletter_admin_fragment();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
         fragment.setArguments(args);
         return fragment;
     }
-
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -72,20 +59,6 @@ public class clockIn_fragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_clock_in_fragment, container, false);
-    }
-
-    @Override
-    public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
-        super.onViewCreated(view, savedInstanceState);
-
-        Button clockBtn = view.findViewById(R.id.ClockBtn);
-
-        clockBtn.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-                MainActivity mainActivity = (MainActivity) getActivity();
-                mainActivity.startTimer();
-            }
-        });
+        return inflater.inflate(R.layout.fragment_newsletter_admin_fragment, container, false);
     }
 }
