@@ -28,6 +28,9 @@
         <action
             android:id="@+id/action_newsletter_fragment_to_clockOut_fragment"
             app:destination="@id/clockOut_fragment" />
+        <action
+            android:id="@+id/action_newsletter"
+            app:destination="@id/newsletter_fragment" />
     </fragment>
     <fragment
         android:id="@+id/profile_fragment"

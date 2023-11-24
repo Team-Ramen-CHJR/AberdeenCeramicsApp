@@ -1,8 +1,11 @@
 package com.example.aberdeenceramicsapp;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.content.res.AppCompatResources;
 import androidx.navigation.NavController;
+import androidx.navigation.Navigation;
 import androidx.navigation.fragment.NavHostFragment;
 import androidx.navigation.ui.NavigationUI;
 
@@ -16,9 +19,12 @@ import java.util.Timer;
 import java.util.Date;
 import java.util.Locale;
 
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.widget.TextView;
+import androidx.appcompat.widget.Toolbar;
+
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
@@ -29,6 +35,8 @@ import com.google.firebase.firestore.QuerySnapshot;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class MainActivity extends AppCompatActivity {
+    private NavController navController;
+
     FirebaseFirestore firestore;
     private static Instant start;
     private static boolean loggedIn;
@@ -84,8 +92,19 @@ public class MainActivity extends AppCompatActivity {
         // this call should be moved to sign in once that is implemented instant start
         //Instant start = startTimer();
 
+        //home button stuff
+        Toolbar homeBar = (Toolbar) findViewById(R.id.homeToolBar);
+        setSupportActionBar(homeBar);
+        ActionBar actionBar = getSupportActionBar();
 
+//        Drawable homeIcon = AppCompatResources.getDrawable(this, R.drawable.acs_logo_without_text);
+//        homeIcon.setBounds(1, 1, 1, 1);
 
+        if (actionBar != null) {
+            actionBar.setDisplayHomeAsUpEnabled(true);
+            actionBar.setTitle("Return to Newsletter");
+//            actionBar.setHomeAsUpIndicator(homeIcon);
+        }
 
 
         //navstuff
@@ -94,7 +113,7 @@ public class MainActivity extends AppCompatActivity {
         NavHostFragment navHostFragment = (NavHostFragment) getSupportFragmentManager().findFragmentById(R.id.nav_host_fragment);
 
         //create nav controller
-        NavController navController = navHostFragment.getNavController();
+        navController = navHostFragment.getNavController();
         BottomNavigationView bottomNav = findViewById(R.id.navbarView);
         NavigationUI.setupWithNavController(bottomNav, navController);
 
@@ -107,7 +126,7 @@ public class MainActivity extends AppCompatActivity {
             if(itemId == R.id.profile_menu){
                 if(loggedIn){
                     navController.navigate(R.id.profile_fragment);
-                } else if (loggedIn == false){
+                } else if (!loggedIn){
                     navController.navigate(R.id.signIn_fragment);
                 }
             } else if (itemId == R.id.clockIn_menu){
@@ -125,6 +144,32 @@ public class MainActivity extends AppCompatActivity {
             return true;
 
         });
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item){
+//        int actionItem = item.getItemId();
+//
+//        if(actionItem == R.id.action_newsletter){
+//            navController.navigate(R.id.newsletter_fragment);
+//            return true;
+//        }
+//        return super.onOptionsItemSelected(item);
+        int itemId = item.getItemId();
+
+        if (itemId == android.R.id.home && navController != null) {
+            // Handle the up button click, usually navigate up in the navigation graph
+            if (navController.navigateUp()) {
+                return true;
+            }
+        }
+//        else if (itemId == R.id.action_newsletter && navController != null) {
+//            // Handle the "Newsletter" menu item click
+//            navController.navigate(R.id.newsletter_fragment);
+//            return true;
+//        }
+
+        return super.onOptionsItemSelected(item);
     }
 
     public Instant startTimer(){
