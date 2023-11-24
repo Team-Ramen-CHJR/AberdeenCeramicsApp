@@ -108,9 +108,11 @@ public class signIn_fragment extends Fragment {
             public void onClick(View v) {
                 firestore = FirebaseFirestore.getInstance();
 
-                final EditText emailInput = (EditText) v.findViewById(R.id.EmailInput);
+                final EditText emailInput = view.findViewById(R.id.EmailInput);
+
                 String email = emailInput.getText().toString();
-                final EditText passwordInput = (EditText) v.findViewById(R.id.PasswordInput);
+                final EditText passwordInput = view.findViewById(R.id.PasswordInput);
+
                 String password = passwordInput.getText().toString();
 
                 firestore.collection("users").whereEqualTo("email", email).get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
@@ -125,7 +127,9 @@ public class signIn_fragment extends Fragment {
                                 // Fetch from database as Map
                                 dbPass = (String) document.getData().get("password");
                                 lastLogIn = (String) document.getData().get("lastLog");
-                                timeLeft = (int) document.getData().get("time remaining");
+                                Long timeLeftLong = (Long) document.getData().get("time remaining");
+                                timeLeft = timeLeftLong != null ? timeLeftLong.intValue() : 0;
+
                                 membership = (String) document.getData().get("membership");
                             }
 
@@ -159,7 +163,6 @@ public class signIn_fragment extends Fragment {
                                                     System.out.println(document.getId() + " = " + document.getData());
                                                 }
 
-                                                MainActivity.getNavController().navigate(R.id.profile_fragment);
 
                                             } else {
                                                 System.out.println("didnt work");
@@ -168,6 +171,8 @@ public class signIn_fragment extends Fragment {
                                     });
 
                                 }
+                                MainActivity.getNavController().navigate(R.id.profile_fragment);
+
 
                             }
                         }

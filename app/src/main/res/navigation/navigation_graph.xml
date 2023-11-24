@@ -64,6 +64,9 @@
         <action
             android:id="@+id/action_signIn_fragment_to_signUp_fragment"
             app:destination="@id/signUp_fragment" />
+        <action
+            android:id="@+id/action_signIn_fragment_to_profile_fragment"
+            app:destination="@id/profile_fragment" />
     </fragment>
     <fragment
         android:id="@+id/clockOut_fragment"
