@@ -36,6 +36,17 @@ public class MainActivity extends AppCompatActivity {
     private static boolean admin;
 
     private static int timeToShow;
+
+    private static String userEmail;
+
+    public static String getUserEmail() {
+        return userEmail;
+    }
+
+    public static void setUserEmail(String userEmail) {
+        MainActivity.userEmail = userEmail;
+    }
+
     public static boolean isClockedIn() {
         return clockedIn;
     }

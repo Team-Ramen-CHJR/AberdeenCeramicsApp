@@ -9,6 +9,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.TextView;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -18,8 +19,10 @@ import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
 
+import java.text.SimpleDateFormat;
 import java.time.Duration;
 import java.time.Instant;
+import java.util.Date;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -66,8 +69,12 @@ public class clockOut_fragment extends Fragment {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
-        String email = "test@email.com"; // have this passed from log in
+        String email = MainActivity.getUserEmail();
         Button clockBtn = (Button) getView().findViewById(R.id.clockBtn);
+
+        TextView timer =(TextView) getView().findViewById(R.id.WeeklyTime);
+        timer.setText("Your time left (not including this session) is: " + getTime());
+
         firestore = FirebaseFirestore.getInstance();
         clockBtn.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
@@ -101,5 +108,16 @@ public class clockOut_fragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_clock_out_fragment, container, false);
+    }
+
+
+
+    public String getTime(){
+        int sec = MainActivity.getTimeToShow();
+        Date d = new Date(sec * 1000L);
+        SimpleDateFormat df = new SimpleDateFormat("HH:mm:ss"); // HH for 0-23
+
+        String time = df.format(d);
+        return time;
     }
 }
