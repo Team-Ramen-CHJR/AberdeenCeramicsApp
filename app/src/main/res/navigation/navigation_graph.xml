@@ -60,10 +60,19 @@
         android:id="@+id/signIn_fragment"
         android:name="com.example.aberdeenceramicsapp.signIn_fragment"
         android:label="fragment_sign_in_fragment"
-        tools:layout="@layout/fragment_sign_in_fragment" />
+        tools:layout="@layout/fragment_sign_in_fragment" >
+        <action
+            android:id="@+id/action_signIn_fragment_to_signUp_fragment"
+            app:destination="@id/signUp_fragment" />
+    </fragment>
     <fragment
         android:id="@+id/clockOut_fragment"
         android:name="com.example.aberdeenceramicsapp.clockOut_fragment"
         android:label="fragment_clock_out_fragment"
         tools:layout="@layout/fragment_clock_out_fragment" />
+    <fragment
+        android:id="@+id/signUp_fragment"
+        android:name="com.example.aberdeenceramicsapp.signUp_fragment"
+        android:label="fragment_sign_up_fragment"
+        tools:layout="@layout/fragment_sign_up_fragment" />
 </navigation>

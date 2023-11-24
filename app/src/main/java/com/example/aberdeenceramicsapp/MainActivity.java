@@ -35,7 +35,7 @@ import com.google.firebase.firestore.QuerySnapshot;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class MainActivity extends AppCompatActivity {
-    private NavController navController;
+    private static NavController navController;
 
     FirebaseFirestore firestore;
     private static Instant start;
@@ -80,6 +80,12 @@ public class MainActivity extends AppCompatActivity {
     }
 
     BottomNavigationView bottomNavigationView;
+
+//
+
+    public static NavController getNavController() {
+        return navController;
+    }
 
     public void setStart(Instant start){
         this.start = start;
@@ -168,13 +174,7 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item){
-//        int actionItem = item.getItemId();
-//
-//        if(actionItem == R.id.action_newsletter){
-//            navController.navigate(R.id.newsletter_fragment);
-//            return true;
-//        }
-//        return super.onOptionsItemSelected(item);
+        //for header
         int itemId = item.getItemId();
 
         if (itemId == android.R.id.home && navController != null) {
@@ -183,12 +183,6 @@ public class MainActivity extends AppCompatActivity {
                 return true;
             }
         }
-//        else if (itemId == R.id.action_newsletter && navController != null) {
-//            // Handle the "Newsletter" menu item click
-//            navController.navigate(R.id.newsletter_fragment);
-//            return true;
-//        }
-
         return super.onOptionsItemSelected(item);
     }
 

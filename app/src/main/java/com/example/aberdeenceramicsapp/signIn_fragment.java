@@ -101,7 +101,8 @@ public class signIn_fragment extends Fragment {
     public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        Button clockBtn = view.findViewById(R.id.SignUp);
+        Button clockBtn = view.findViewById(R.id.LoginBtn);
+        Button navigateToSignupButton = view.findViewById(R.id.SignUp);
 
         clockBtn.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
@@ -157,6 +158,9 @@ public class signIn_fragment extends Fragment {
                                                     //this will need properly parsed if we need to use any of the data (which we should)
                                                     System.out.println(document.getId() + " = " + document.getData());
                                                 }
+
+                                                MainActivity.getNavController().navigate(R.id.profile_fragment);
+
                                             } else {
                                                 System.out.println("didnt work");
                                             }
@@ -169,6 +173,14 @@ public class signIn_fragment extends Fragment {
                         }
                     }
                 });
+            }
+        });
+
+        navigateToSignupButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Navigate to the sign-up fragment when the button is clicked
+                MainActivity.getNavController().navigate(R.id.signUp_fragment);
             }
         });
 
