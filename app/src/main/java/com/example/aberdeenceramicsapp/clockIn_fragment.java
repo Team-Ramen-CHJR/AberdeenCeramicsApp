@@ -9,6 +9,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.TextView;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -17,8 +18,10 @@ import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
 
+import java.text.SimpleDateFormat;
 import java.time.Duration;
 import java.time.Instant;
+import java.util.Date;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -78,6 +81,8 @@ public class clockIn_fragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+        TextView timer =(TextView) view.findViewById(R.id.titleview);
+        timer.setText("Your time left is: " + getTime());
 
         Button clockBtn = view.findViewById(R.id.ClockBtn);
 
@@ -87,5 +92,14 @@ public class clockIn_fragment extends Fragment {
                 mainActivity.startTimer();
             }
         });
+    }
+
+    public String getTime(){
+        int sec = MainActivity.getTimeToShow();
+        Date d = new Date(sec * 1000L);
+        SimpleDateFormat df = new SimpleDateFormat("HH:mm:ss"); // HH for 0-23
+
+        String time = df.format(d);
+        return time;
     }
 }
