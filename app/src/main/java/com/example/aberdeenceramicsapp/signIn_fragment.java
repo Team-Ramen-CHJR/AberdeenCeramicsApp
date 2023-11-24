@@ -141,6 +141,8 @@ public class signIn_fragment extends Fragment {
                                         timeLeft = 43200;
                                     }
                                     final int timeFinal = timeLeft;
+                                    MainActivity.setTimeToShow(timeLeft);
+                                    MainActivity.setUserEmail(email);
                                     firestore.collection("users").whereEqualTo("email", email).get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
                                         @Override
                                         public void onComplete(@NonNull Task<QuerySnapshot> task) {
