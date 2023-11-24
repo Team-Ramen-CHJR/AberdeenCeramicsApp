@@ -12,26 +12,24 @@ import android.widget.Button;
 import android.widget.EditText;
 
 import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
-import com.google.firebase.firestore.DocumentSnapshot;
+import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
 
-
 import java.util.HashMap;
 import java.util.Map;
 
-import com.google.android.gms.tasks.OnSuccessListener;
 
-import com.google.firebase.firestore.DocumentReference;
 
 /**
  * A simple {@link Fragment} subclass.
- * Use the {@link newsletter_admin_fragment#newInstance} factory method to
+ * Use the {@link addNewsletter#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class newsletter_admin_fragment extends Fragment {
+public class addNewsletter extends Fragment {
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -41,9 +39,10 @@ public class newsletter_admin_fragment extends Fragment {
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
+    FirebaseFirestore firestore;
 
 
-    public newsletter_admin_fragment() {
+    public addNewsletter() {
         // Required empty public constructor
     }
 
@@ -53,11 +52,11 @@ public class newsletter_admin_fragment extends Fragment {
      *
      * @param param1 Parameter 1.
      * @param param2 Parameter 2.
-     * @return A new instance of fragment newsletter_admin_fragment.
+     * @return A new instance of fragment addNewsletter.
      */
     // TODO: Rename and change types and number of parameters
-    public static newsletter_admin_fragment newInstance(String param1, String param2) {
-        newsletter_admin_fragment fragment = new newsletter_admin_fragment();
+    public static addNewsletter newInstance(String param1, String param2) {
+        addNewsletter fragment = new addNewsletter();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
@@ -78,8 +77,9 @@ public class newsletter_admin_fragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_newsletter_admin_fragment, container, false);
+        return inflater.inflate(R.layout.fragment_add_newsletter, container, false);
     }
+
 
     @Override
     public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
@@ -89,11 +89,31 @@ public class newsletter_admin_fragment extends Fragment {
 
         addBtn.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                //move to addnewsletter
+                firestore = FirebaseFirestore.getInstance();
+
+                final EditText titleInput = (EditText) v.findViewById(R.id.titleInput);
+                String title = titleInput.getText().toString();
+                final EditText textInput = (EditText) v.findViewById(R.id.textInput);
+                String text = textInput.getText().toString();
+
+                Map<String, Object> news = new HashMap<>(); //each key/value pair in the map corresponds to a line of JSON. key being the variable name and value being the data
+
+                news.put("title", title);
+                news.put("description", text); // this is for timestamp. Im going to have a look at formatting it better but for now dont worry about it
+
+                //line below is for adding. think the listener isn't needed but it can't hurt
+                firestore.collection("newsletters").add(news).addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
+                    @Override
+                    public void onSuccess(DocumentReference documentReference) {
+                        System.out.println("success");
+                    }
+                });
 
 
             }
         });
 
     }
+
+
 }
