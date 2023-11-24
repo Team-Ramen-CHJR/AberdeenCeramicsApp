@@ -145,6 +145,7 @@ public class signIn_fragment extends Fragment {
                                     } else if (membership == "ft") {
                                         timeLeft = 43200;
                                     }
+                                    System.out.println(timeLeft);
                                     final int timeFinal = timeLeft;
                                     MainActivity.setTimeToShow(timeLeft);
                                     MainActivity.setUserEmail(email);
@@ -170,6 +171,8 @@ public class signIn_fragment extends Fragment {
                                         }
                                     });
 
+                                }else{
+                                    MainActivity.setTimeToShow(timeLeft);
                                 }
                                 MainActivity.getNavController().navigate(R.id.profile_fragment);
 

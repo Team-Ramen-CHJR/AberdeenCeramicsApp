@@ -81,7 +81,7 @@ public class clockIn_fragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        TextView timer =(TextView) view.findViewById(R.id.titleview);
+        TextView timer =(TextView) view.findViewById(R.id.Time);
         timer.setText("Your time left is: " + getTime());
 
         Button clockBtn = view.findViewById(R.id.ClockBtn);
@@ -96,10 +96,18 @@ public class clockIn_fragment extends Fragment {
 
     public String getTime(){
         int sec = MainActivity.getTimeToShow();
-        Date d = new Date(sec * 1000L);
-        SimpleDateFormat df = new SimpleDateFormat("HH:mm:ss"); // HH for 0-23
+        //Date d = new Date(sec * 1000L);
 
-        String time = df.format(d);
-        return time;
+        //SimpleDateFormat df = new SimpleDateFormat("HH:mm:ss"); // HH for 0-23
+
+        //String time = df.format(d);
+
+
+        System.out.println(sec);
+        int hours = sec / 3600;
+        int minutes = (sec % 3600) / 60;
+
+        return String.format("%02d:%02d", hours, minutes);
+
     }
 }
