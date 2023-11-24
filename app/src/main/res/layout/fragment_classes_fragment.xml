@@ -178,7 +178,7 @@
                     android:layout_width="66dp"
                     android:layout_height="189dp"
                     android:scaleType="fitXY"
-                    android:src="@drawable/class_1"
+                    android:src="@drawable/class_2"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
@@ -255,8 +255,8 @@
                     android:id="@+id/C3_Image"
                     android:layout_width="66dp"
                     android:layout_height="189dp"
-                    android:scaleType="fitXY"
-                    android:src="@drawable/class_1"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/class_3"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
@@ -336,8 +336,8 @@
                     android:id="@+id/C4_Image"
                     android:layout_width="66dp"
                     android:layout_height="189dp"
-                    android:scaleType="fitXY"
-                    android:src="@drawable/class_1"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/class_4"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
@@ -417,8 +417,8 @@
                     android:id="@+id/C5_Image"
                     android:layout_width="66dp"
                     android:layout_height="189dp"
-                    android:scaleType="fitXY"
-                    android:src="@drawable/class_1"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/class_5"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
@@ -499,8 +499,8 @@
                     android:id="@+id/C6_Image"
                     android:layout_width="66dp"
                     android:layout_height="189dp"
-                    android:scaleType="fitXY"
-                    android:src="@drawable/class_1"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/class_6"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
@@ -580,8 +580,9 @@
                     android:id="@+id/C7_Image"
                     android:layout_width="66dp"
                     android:layout_height="189dp"
-                    android:scaleType="fitXY"
-                    android:src="@drawable/class_1"
+                    android:layout_marginTop="4dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/class_7"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
