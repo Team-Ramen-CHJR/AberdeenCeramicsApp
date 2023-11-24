@@ -100,7 +100,7 @@ public class addNewsletter extends Fragment {
 
                 news.put("title", title);
                 news.put("description", text); // this is for timestamp. Im going to have a look at formatting it better but for now dont worry about it
-
+                news.put("time", System.currentTimeMillis());
                 //line below is for adding. think the listener isn't needed but it can't hurt
                 firestore.collection("newsletters").add(news).addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
                     @Override
