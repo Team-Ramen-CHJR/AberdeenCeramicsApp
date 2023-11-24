@@ -81,7 +81,7 @@ public class clockIn_fragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        TextView timer =(TextView) view.findViewById(R.id.titleview);
+        TextView timer =(TextView) view.findViewById(R.id.Time);
         timer.setText("Your time left is: " + getTime());
 
         Button clockBtn = view.findViewById(R.id.ClockBtn);

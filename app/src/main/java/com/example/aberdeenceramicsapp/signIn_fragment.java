@@ -159,7 +159,7 @@ public class signIn_fragment extends Fragment {
                                                     System.out.println(document.getId() + " = " + document.getData());
                                                 }
 
-                                                MainActivity.getNavController().navigate(R.id.profile_fragment);
+//                                                MainActivity.getNavController().navigate(R.id.profile_fragment);
 
                                             } else {
                                                 System.out.println("didnt work");
