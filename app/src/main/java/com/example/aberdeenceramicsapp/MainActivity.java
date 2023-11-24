@@ -32,6 +32,25 @@ public class MainActivity extends AppCompatActivity {
     FirebaseFirestore firestore;
     private static Instant start;
     private static boolean loggedIn;
+    private static boolean clockedIn;
+    private static boolean admin;
+
+    public static boolean isClockedIn() {
+        return clockedIn;
+    }
+
+    public static void setClockedIn(boolean clockedIn) {
+        MainActivity.clockedIn = clockedIn;
+    }
+
+    public static boolean isAdmin() {
+        return admin;
+    }
+
+    public static void setAdmin(boolean admin) {
+        MainActivity.admin = admin;
+    }
+
     BottomNavigationView bottomNavigationView;
 
     public void setStart(Instant start){
@@ -47,6 +66,8 @@ public class MainActivity extends AppCompatActivity {
         return loggedIn;
     }
 
+
+
     public static void setLoggedIn(boolean loggedInSet) {
         loggedIn = loggedInSet;
     }
@@ -55,50 +76,15 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setLoggedIn(false);
-        this.instance = new MainActivity();
+        setAdmin(false);
+        setClockedIn(false);
         setContentView(R.layout.activity_main);
         firestore = FirebaseFirestore.getInstance();
 
         // this call should be moved to sign in once that is implemented instant start
         //Instant start = startTimer();
 
-        //adding a user
-        Map<String, Object> users = new HashMap<>(); //each key/value pair in the map corresponds to a line of JSON. key being the variable name and value being the data
 
-        users.put("email", "newuser@email.com");
-        users.put("lastLog", new SimpleDateFormat("dd MMMM yyyy HH:mm:ss", Locale.ENGLISH).format(new Date(System.currentTimeMillis()))); // this is for timestamp. Im going to have a look at formatting it better but for now dont worry about it
-        String membership = "pt"; //using a variable instead of just putting pt straight in as I am reusing it later
-        users.put("membership", membership);
-        users.put("password", "Password2");
-        int time = 21600; // some stuff for membership time (6 hours in seconds)
-        if(membership == "ft" || membership == "admin"){
-            time = 43200; //12 hours
-        }
-        users.put("time remaining", time);
-        //line below is for adding. think the listener isn't needed but it can't hurt
-        firestore.collection("users").add(users).addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
-            @Override
-            public void onSuccess(DocumentReference documentReference) {
-                System.out.println("success");
-            }
-        });
-        //stuff for pulling from firebase. whereEqualTo searches the collection for records with the field that matches the specified values
-        String input = "newuser@email.com";
-        firestore.collection("users").whereEqualTo("email", input).get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
-            @Override
-            public void onComplete(@NonNull Task<QuerySnapshot> task) {
-
-                if(task.isSuccessful()){
-                    System.out.println("success");
-                    for(QueryDocumentSnapshot document : task.getResult()){
-                        //this will need properly parsed if we need to use any of the data (which we should)
-                        System.out.println(document.getId() + " = " + document.getData());
-                    }
-                }else{
-                    System.out.println("didnt work");
-                }
-            }
-        });
 
 
 
